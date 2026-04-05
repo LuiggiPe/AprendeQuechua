@@ -1,24 +1,110 @@
+<!DOCTYPE html>
+<html lang="es">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Juego de Memoria - Aprende Quechua</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
 
-
+<div id="pagina4" class="contenedor">
+    <h1>🃏 Juego de Memoria</h1>
     
+    <p id="estadoJuego" class="resultado">Selecciona una carátula para empezar</p>
 
-<!-- PAGINA 4 -->
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel="stylesheet" href="style.css"></head>
-    
-    
-<div id="pagina4" class="pagina">
-<div class="contenedor">
-<h1>🃏 Juego de Memoria</h1>
+    <div id="tablero"></div>
 
-<div id="tablero" style="display:grid;grid-template-columns:repeat(4,1fr);gap:10px;"></div>
-
-<p id="estadoJuego" class="resultado"></p>
-<div class="controles-reproductor">
-    <a href="pagina3.html" class="btn-secundario">⬅️ Volver al Examen</a>
-    <a href="index.html" class="btn-principal">🏠 Inicio</a>
+    <div class="controles-reproductor">
+        <a href="pagina3.html" class="btn-secundario">⬅️ Volver al Examen</a>
+        <a href="index.html" class="btn-principal">🏠 Inicio</a>
+    </div>
 </div>
 
-</div>
-</div>
+<script>
+// === CONFIGURACIÓN DEL JUEGO ===
+const cartasBase = [
+    ["Rimaykullayki", "Hola"],
+    ["Sulpayki", "Gracias"],
+    ["Allinmi kani", "Estoy bien"],
+    ["Imaynallan kashanki", "¿Cómo estás?"],
+    ["Ñuqa", "Yo"],
+    ["Qam", "Tú"],
+    ["Pay", "Él/Ella"],
+    ["Ñuqanchik", "Nosotros"]
+];
+
+let seleccion = [], bloqueo = false, aciertos = 0;
+
+function iniciarJuego() {
+    const tablero = document.getElementById("tablero");
+    tablero.innerHTML = "";
+    aciertos = 0;
+
+    let todasLasCartas = [];
+    cartasBase.forEach(p => {
+        todasLasCartas.push({ texto: p[0], pareja: p[1] });
+        todasLasCartas.push({ texto: p[1], pareja: p[0] });
+    });
+
+    // Mezcla aleatoria
+    todasLasCartas.sort(() => Math.random() - 0.5);
+
+    todasLasCartas.forEach(c => {
+        let d = document.createElement("div");
+        d.className = "carta";
+        d.innerHTML = "🎵"; // Icono estilo música
+        d.dataset.texto = c.texto;
+        d.dataset.pareja = c.pareja;
+        d.onclick = () => voltear(d);
+        tablero.appendChild(d);
+    });
+}
+
+function voltear(c) {
+    if (bloqueo || c.classList.contains("acertada") || seleccion.includes(c)) return;
+
+    c.innerHTML = c.dataset.texto;
+    c.style.backgroundColor = "#333";
+    c.style.color = "#FFF";
+    seleccion.push(c);
+
+    if (seleccion.length === 2) {
+        bloqueo = true;
+        let [a, b] = seleccion;
+
+        if (a.dataset.pareja === b.dataset.texto) {
+            // ACIERTO ✅
+            aciertos++;
+            a.classList.add("acertada");
+            b.classList.add("acertada");
+            document.getElementById("estadoJuego").innerHTML = "🎧 ¡Buen ritmo! (" + aciertos + "/8)";
+            seleccion = [];
+            bloqueo = false;
+
+            if (aciertos === 8) {
+                document.getElementById("estadoJuego").innerHTML = "🏆 ¡Álbum completado! Eres un experto.";
+            }
+        } else {
+            // ERROR ❌
+            document.getElementById("estadoJuego").innerHTML = "🔇 Desafinado... intenta otra vez";
+            setTimeout(() => {
+                a.innerHTML = "🎵";
+                b.innerHTML = "🎵";
+                a.style.backgroundColor = "#282828";
+                b.style.backgroundColor = "#282828";
+                a.style.color = "#B3B3B3";
+                b.style.color = "#B3B3B3";
+                seleccion = [];
+                bloqueo = false;
+            }, 800);
+        }
+    }
+}
+
+// Iniciar automáticamente
+window.onload = iniciarJuego;
+</script>
+
+</body>
+</html>
