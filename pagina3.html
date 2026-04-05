@@ -3,81 +3,151 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lección 2: Saludos - Aprende Quechua</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Lección 2: Saludos - Aprende Quechua 🦙</title>
+    <style>
+        /* --- CSS INTEGRADO ESTILO APP --- */
+        body {
+            background-color: #000000;
+            color: #FFFFFF;
+            font-family: 'Segoe UI', Arial, sans-serif;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+        }
+
+        .contenedor {
+            width: 100%;
+            max-width: 500px;
+            background-color: #121212;
+            min-height: 100vh;
+            padding: 20px;
+            box-sizing: border-box;
+            border-left: 1px solid #282828;
+            border-right: 1px solid #282828;
+        }
+
+        h1 { color: #1DB954; text-align: center; font-size: 1.8rem; margin: 10px 0; }
+        p { color: #b3b3b3; text-align: center; font-size: 0.9rem; margin-bottom: 20px; }
+
+        /* TARJETAS DE PRÁCTICA */
+        .tarjeta-saludo {
+            background-color: #181818;
+            padding: 20px;
+            border-radius: 12px;
+            margin-bottom: 15px;
+            border: 1px solid #282828;
+        }
+
+        .quechua-word {
+            display: block;
+            font-size: 1.2rem;
+            font-weight: bold;
+            color: #1DB954;
+            margin-bottom: 15px;
+            text-align: center;
+        }
+
+        /* OPCIONES */
+        .opcion-item {
+            display: flex;
+            align-items: center;
+            background-color: #282828;
+            padding: 12px;
+            border-radius: 8px;
+            margin-bottom: 8px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .opcion-item:hover { background-color: #333; }
+
+        input[type="radio"] {
+            margin-right: 15px;
+            accent-color: #1DB954;
+            transform: scale(1.3);
+        }
+
+        /* NAVEGACIÓN */
+        .controles-footer {
+            margin-top: 30px;
+            display: flex;
+            gap: 10px;
+            padding-bottom: 40px;
+        }
+
+        .btn-principal {
+            flex: 2; background-color: #1DB954; color: #000;
+            text-align: center; padding: 15px; border-radius: 50px;
+            font-weight: bold; text-transform: uppercase; text-decoration: none;
+        }
+
+        .btn-secundario {
+            flex: 1; background-color: transparent; color: #FFF;
+            border: 1px solid #535353; text-align: center;
+            padding: 15px; border-radius: 50px; font-weight: bold; text-decoration: none;
+        }
+
+        #feedback-saludos {
+            text-align: center;
+            font-weight: bold;
+            margin: 15px 0;
+        }
+    </style>
 </head>
 <body>
 
 <div class="contenedor">
-    <header style="padding: 20px 0;">
-        <h1>Lección 02: Saludos 🦙</h1>
-        <p style="text-align: center; color: #B3B3B3;">Aprende las frases de cortesía más comunes, ¡Wayki!</p>
-    </header>
+    <h1>Lección 02: Saludos 👋</h1>
+    <p>¿Cómo se traducen estos saludos al español?</p>
 
-    <div class="lista-saludos">
-        
-        <div class="track-item">
-            <span class="num">01</span>
-            <div class="textos">
-                <span class="q-word">Allillanchu?</span>
-                <span class="e-word">¿Hola / Cómo estás?</span>
-            </div>
-            <span class="duracion">Vocal</span>
-        </div>
-
-        <div class="track-item">
-            <span class="num">02</span>
-            <div class="textos">
-                <span class="q-word">Imaynallan kashanki?</span>
-                <span class="e-word">¿Cómo estás yendo?</span>
-            </div>
-            <span class="duracion">Vocal</span>
-        </div>
-
-        <div class="track-item">
-            <span class="num">03</span>
-            <div class="textos">
-                <span class="q-word">Allinmi kani</span>
-                <span class="e-word">Estoy bien</span>
-            </div>
-            <span class="duracion">Vocal</span>
-        </div>
-
-        <div class="track-item">
-            <span class="num">04</span>
-            <div class="textos">
-                <span class="q-word">Imaynallan p'unchayniki?</span>
-                <span class="e-word">¿Cómo está tu día?</span>
-            </div>
-            <span class="duracion">Vocal</span>
-        </div>
-
-        <div class="track-item">
-            <span class="num">05</span>
-            <div class="textos">
-                <span class="q-word">Sulpayki</span>
-                <span class="e-word">Gracias</span>
-            </div>
-            <span class="duracion">Vocal</span>
-        </div>
-
-        <div class="track-item">
-            <span class="num">06</span>
-            <div class="textos">
-                <span class="q-word">Tupananchikkama</span>
-                <span class="e-word">Hasta pronto</span>
-            </div>
-            <span class="duracion">Vocal</span>
-        </div>
-
+    <div class="tarjeta-saludo">
+        <span class="quechua-word">"Allillanchu?"</span>
+        <label class="opcion-item"><input type="radio" name="s1" value="correcto"> <span>¿Cómo estás? / Hola</span></label>
+        <label class="opcion-item"><input type="radio" name="s1" value="incorrecto"> <span>Gracias</span></label>
     </div>
 
-    <div class="controles-reproductor">
-        <a href="pagina2.html" class="btn-secundario">⬅️ Pronombres</a>
-        
-        <a href="pagina4.html" class="btn-principal">Ir al Examen 📝</a>
+    <div class="tarjeta-saludo">
+        <span class="quechua-word">"Tupananchikkama"</span>
+        <label class="opcion-item"><input type="radio" name="s2" value="incorrecto"> <span>Por favor</span></label>
+        <label class="opcion-item"><input type="radio" name="s2" value="correcto"> <span>Hasta que nos volvamos a encontrar</span></label>
+    </div>
+
+    <div class="tarjeta-saludo">
+        <span class="quechua-word">"Sulpayki"</span>
+        <label class="opcion-item"><input type="radio" name="s3" value="correcto"> <span>Gracias</span></label>
+        <label class="opcion-item"><input type="radio" name="s3" value="incorrecto"> <span>De nada</span></label>
+    </div>
+
+    <div id="feedback-saludos"></div>
+
+    <div style="text-align: center;">
+        <button onclick="revisarSaludos()" class="btn-secundario" style="width: 100%; border-color: #1DB954; color: #1DB954;">🔍 VERIFICAR</button>
+    </div>
+
+    <div class="controles-footer">
+        <a href="pagina2.html" class="btn-secundario">⬅️ Atrás</a>
+        <a href="pagina4.html" class="btn-principal">Ir al Examen ➡️</a>
     </div>
 </div>
+
+<script>
+function revisarSaludos() {
+    let aciertos = 0;
+    const total = 3;
+    for(let i=1; i<=total; i++) {
+        const r = document.querySelector(`input[name="s${i}"]:checked`);
+        if(r && r.value === "correcto") aciertos++;
+    }
+    const f = document.getElementById('feedback-saludos');
+    if(aciertos === total) {
+        f.innerHTML = "✅ ¡Allinmi! Ya conoces los saludos básicos.";
+        f.style.color = "#1DB954";
+    } else {
+        f.innerHTML = `⚠️ Tienes ${aciertos} de ${total}. ¡Revisa de nuevo!`;
+        f.style.color = "#FFD700";
+    }
+}
+</script>
 
 </body>
 </html>
