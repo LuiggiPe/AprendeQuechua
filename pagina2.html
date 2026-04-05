@@ -70,19 +70,13 @@
 
     <div style="text-align: center; margin: 30px 0;">
         <button onclick="verificarLeccion()" class="btn-principal">🦙 Verificar Todo</button>
-        <p id="resultado-texto" class="mensaje-feedback"></p>
+        <p id="resultado-texto" style="margin-top: 15px; font-weight: bold;"></p>
     </div>
 
     <div class="controles-reproductor">
-        <a href="index.html" class="btn-secundario">⬅️ Volver</a>
-        <a href="pagina3.html" id="btn-siguiente" class="btn-principal" style="display: none;">¡Al Examen! ☀️</a>
+        <a href="index.html" class="btn-secundario">⬅️ Volver al Inicio</a>
+        <a href="pagina3.html" id="btn-siguiente" class="btn-principal" style="display: none;">Siguiente: Saludos ➡️</a>
     </div>
-</div>
-
-    <div class="controles-reproductor">
-    <a href="index.html" class="btn-secundario">⬅️ Volver al Inicio</a>
-
-    <a href="pagina3.html" class="btn-principal">¡Ir al Examen! ☀️</a>
 </div>
 
 <script>
@@ -99,12 +93,13 @@ function verificarLeccion() {
     const btnSiguiente = document.getElementById('btn-siguiente');
 
     if (aciertos === totalPreguntas) {
-        feedback.innerHTML = "🦙 ✅ ¡Allinmi! Has aprendido todos los pronombres.";
+        feedback.innerHTML = "🦙 ✅ ¡Allinmi! Has aprendido los pronombres. ¡Ahora vamos por los saludos!";
         feedback.style.color = "#1DB954";
         btnSiguiente.style.display = "inline-block";
     } else {
         feedback.innerHTML = `❌ Te faltan ${totalPreguntas - aciertos} correctas. ¡Sigue intentando!`;
         feedback.style.color = "#FF4136";
+        btnSiguiente.style.display = "none";
     }
 }
 </script>
