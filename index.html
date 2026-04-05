@@ -3,34 +3,41 @@
 <head>
  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta charset="UTF-8">
+ <link href="https://fonts.googleapis.com/css2?family=Luckiest+Guy&family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
 <title>Curso Quechua</title>
 
 <style>
 
-  <style>
 
 body {
-  font-family: Arial;
+  font-family: 'Montserrat', sans-serif;
   margin: 0;
-  background: #f0f0f0;
+  background: linear-gradient(135deg, #ff00cc, #3333ff);
 }
 
-/* contenedor adaptable */
+/* contenedor */
 .contenedor {
-  background: white;
+  background: rgba(255,255,255,0.95);
   padding: 20px;
-  border-radius: 10px;
+  border-radius: 15px;
   max-width: 800px;
   margin: auto;
+  box-shadow: 0 0 20px rgba(0,0,0,0.3);
 }
 
-/* texto adaptable */
+/* títulos estilo chicha */
 h1 {
-  font-size: 28px;
+  font-family: 'Luckiest Guy', cursive;
+  font-size: 32px;
+  text-align: center;
+  color: #ffcc00;
+  text-shadow: 3px 3px #ff0066;
 }
 
+/* texto */
 p, li {
   font-size: 16px;
+  color: #222;
 }
 
 /* botones */
@@ -39,12 +46,19 @@ button {
   padding: 12px;
   margin-top: 10px;
   border: none;
-  border-radius: 8px;
-  background: #333;
-  color: white;
+  border-radius: 10px;
+  background: linear-gradient(45deg, #ff0066, #ffcc00);
+  color: black;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s;
 }
 
-/* cartas del juego */
+button:hover {
+  transform: scale(1.05);
+}
+
+/* cartas */
 #tablero {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -52,35 +66,26 @@ button {
 }
 
 .carta {
-  padding: 15px;
-  font-size: 14px;
+  padding: 20px;
+  background: linear-gradient(45deg, #00ffcc, #ff00cc);
+  color: black;
+  font-weight: bold;
+  text-align: center;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: 0.3s;
 }
 
-/* 📱 AJUSTE PARA CELULAR */
+.carta:hover {
+  transform: scale(1.1);
+}
+
+/* 📱 responsive */
 @media (max-width: 600px) {
-
-  h1 {
-    font-size: 20px;
-  }
-
-  p, li {
-    font-size: 14px;
-  }
-
-  .contenedor {
-    padding: 15px;
-  }
-
-  #tablero {
-    grid-template-columns: repeat(2, 1fr); /* menos columnas */
-  }
-
-  .carta {
-    padding: 20px;
-    font-size: 16px;
-  }
-
+  h1 { font-size: 22px; }
+  #tablero { grid-template-columns: repeat(2, 1fr); }
 }
+
 
   
 body { font-family: Arial; margin: 0; background: #f0f0f0; }
