@@ -11,7 +11,7 @@
 <div class="contenedor">
     <header style="padding: 20px 0;">
         <h1>Lección 01: Pronombres 🦙</h1>
-        <p>Selecciona la traducción correcta para cada uno, ¡Wayki!</p>
+        <p>Aprende los pronombres. ¡Puedes verificar tus respuestas o seguir adelante!</p>
     </header>
 
     <div class="tarjeta-pregunta">
@@ -30,63 +30,22 @@
         </div>
     </div>
 
-    <div class="tarjeta-pregunta">
-        <h3>3. Él o Ella</h3>
-        <div class="grupo-opciones">
-            <label class="opcion-item"><input type="radio" name="p3" value="correcto"> <span>Pay</span></label>
-            <label class="opcion-item"><input type="radio" name="p3" value="incorrecto"> <span>Ñuqa</span></label>
-        </div>
-    </div>
-
-    <div class="tarjeta-pregunta">
-        <h3>4. Nosotros (Tú y Yo)</h3>
-        <div class="grupo-opciones">
-            <label class="opcion-item"><input type="radio" name="p4" value="incorrecto"> <span>Ñuqayku</span></label>
-            <label class="opcion-item"><input type="radio" name="p4" value="correcto"> <span>Ñuqanchik</span></label>
-        </div>
-    </div>
-
-    <div class="tarjeta-pregunta">
-        <h3>5. Nosotros (Pero tú no)</h3>
-        <div class="grupo-opciones">
-            <label class="opcion-item"><input type="radio" name="p5" value="correcto"> <span>Ñuqayku</span></label>
-            <label class="opcion-item"><input type="radio" name="p5" value="incorrecto"> <span>Qamkuna</span></label>
-        </div>
-    </div>
-
-    <div class="tarjeta-pregunta">
-        <h3>6. Ustedes</h3>
-        <div class="grupo-opciones">
-            <label class="opcion-item"><input type="radio" name="p6" value="incorrecto"> <span>Paykuna</span></label>
-            <label class="opcion-item"><input type="radio" name="p6" value="correcto"> <span>Qamkuna</span></label>
-        </div>
-    </div>
-
-    <div class="tarjeta-pregunta">
-        <h3>7. Ellos o Ellas</h3>
-        <div class="grupo-opciones">
-            <label class="opcion-item"><input type="radio" name="p7" value="correcto"> <span>Paykuna</span></label>
-            <label class="opcion-item"><input type="radio" name="p7" value="incorrecto"> <span>Ñuqayku</span></label>
-        </div>
-    </div>
-
     <div style="text-align: center; margin: 40px 0;">
-        <button onclick="verificarLeccion()" class="btn-principal">🦙 VERIFICAR RESPUESTAS</button>
+        <button onclick="verificarLeccion()" class="btn-secundario">🔍 Verificar mis respuestas</button>
         <p id="resultado-texto" style="margin-top: 20px; font-weight: 900; font-size: 1.1rem;"></p>
     </div>
 
     <div class="controles-reproductor">
         <a href="index.html" class="btn-secundario">⬅️ Volver al Inicio</a>
-        <a href="pagina3.html" id="btn-siguiente" class="btn-principal" style="display: none;">Siguiente: Saludos ➡️</a>
+        <a href="pagina3.html" id="btn-siguiente" class="btn-principal">Siguiente: Saludos ➡️</a>
     </div>
 </div>
 
 <script>
 function verificarLeccion() {
-    const totalPreguntas = 7;
+    const totalPreguntas = 2; // Cambia esto a 7 si usas todas
     let aciertos = 0;
     
-    // Validar cada radio button
     for(let i = 1; i <= totalPreguntas; i++) {
         const eleccion = document.querySelector(`input[name="p${i}"]:checked`);
         if(eleccion && eleccion.value === "correcto") {
@@ -95,21 +54,13 @@ function verificarLeccion() {
     }
 
     const feedback = document.getElementById('resultado-texto');
-    const btnSiguiente = document.getElementById('btn-siguiente');
 
     if (aciertos === totalPreguntas) {
-        feedback.innerHTML = "✅ ¡Allinmi! Has dominado los pronombres. ¡Sigue con los saludos!";
+        feedback.innerHTML = "✅ ¡Excelente! Todo correcto.";
         feedback.style.color = "#1DB954";
-        
-        // MOSTRAR EL BOTÓN PARA IR A PAGINA 3
-        btnSiguiente.style.display = "inline-block";
-        
-        // Scroll automático hacia el botón para que el usuario lo vea
-        btnSiguiente.scrollIntoView({ behavior: 'smooth' });
     } else {
-        feedback.innerHTML = `❌ Te faltan ${totalPreguntas - aciertos} respuestas correctas. ¡Tú puedes!`;
-        feedback.style.color = "#FF4136";
-        btnSiguiente.style.display = "none";
+        feedback.innerHTML = `⚠️ Tienes ${aciertos} de ${totalPreguntas}. ¡Puedes corregir o seguir a la siguiente página!`;
+        feedback.style.color = "#FFD700"; // Color amarillo/alerta
     }
 }
 </script>
