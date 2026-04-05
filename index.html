@@ -89,6 +89,39 @@
     <h1>APRENDE QUECHUA 🦙</h1>
     <p>Tu playlist para dominar el idioma de los Incas</p>
 
+    <div id="install-container" style="display: none; margin-top: 20px;">
+  
+    <button id="btn-instalar" class="btn-principal" style="background-color: #ffffff; color: #000; width: 100%;">
+      
+        📲 INSTALAR APP (LLAMA)
+    </button>
+</div>
+
+<script>
+    let deferredPrompt;
+    const installContainer = document.getElementById('install-container');
+    const btnInstalar = document.getElementById('btn-instalar');
+
+    window.addEventListener('beforeinstallprompt', (e) => {
+        // Evita que Chrome muestre el aviso automático
+        e.preventDefault();
+        deferredPrompt = e;
+        // Muestra nuestro botón personalizado
+        installContainer.style.display = 'block';
+    });
+
+    btnInstalar.addEventListener('click', async () => {
+        if (deferredPrompt) {
+            deferredPrompt.prompt();
+            const { outcome } = await deferredPrompt.userChoice;
+            if (outcome === 'accepted') {
+                console.log('El usuario instaló la app');
+            }
+            deferredPrompt = null;
+            installContainer.style.display = 'none';
+        }
+    });
+</script>
     <div class="banner-inicio">
         <span class="tag-negro">LECCIÓN DEL DÍA</span>
         <h2>Los Pronombres Personales</h2>
