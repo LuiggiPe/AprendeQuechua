@@ -9,7 +9,6 @@
     <meta name="theme-color" content="#1DB954">
 
     <style>
-        /* --- ESTILO BASE TIPO APP --- */
         body {
             background-color: #000000;
             color: #FFFFFF;
@@ -36,7 +35,6 @@
         p { color: #b3b3b3; text-align: center; font-size: 0.9rem; margin-bottom: 20px; }
         a { text-decoration: none; color: inherit; }
 
-        /* BANNER SUPERIOR */
         .banner-inicio {
             background: linear-gradient(180deg, #1DB954 0%, #121212 100%);
             padding: 25px;
@@ -46,8 +44,7 @@
         .banner-inicio h2 { color: #000; margin: 5px 0; font-size: 1.6rem; }
         .tag-negro { color: #000; font-weight: 900; font-size: 0.7rem; }
 
-        /* CAJITAS / TARJETAS */
-        .seccion-titulo { margin: 20px 0 10px 0; font-size: 1.2rem; }
+        .seccion-titulo { margin: 20px 0 10px 0; font-size: 1.1rem; font-weight: bold; color: #1DB954; }
         
         .tarjeta-item {
             display: flex;
@@ -57,43 +54,25 @@
             border-radius: 12px;
             margin-bottom: 12px;
             border: 1px solid #282828;
-            transition: 0.3s;
+            transition: 0.2s;
         }
-        .tarjeta-item:hover { background-color: #282828; transform: scale(1.02); }
+        .tarjeta-item:hover { background-color: #282828; }
 
         .icono-caja {
             background-color: #282828;
-            width: 50px; height: 50px;
+            width: 45px; height: 45px;
             display: flex; align-items: center; justify-content: center;
-            border-radius: 10px; font-size: 1.5rem; margin-right: 15px;
+            border-radius: 10px; font-size: 1.4rem; margin-right: 15px;
         }
 
-        .info .nombre { display: block; font-weight: bold; font-size: 1rem; color: #fff; }
-        .info .sub { font-size: 0.8rem; color: #b3b3b3; }
+        .info .nombre { display: block; font-weight: bold; font-size: 0.95rem; color: #fff; }
+        .info .sub { font-size: 0.75rem; color: #b3b3b3; }
         
-        /* BOTÓN INSTALAR */
-        .seccion-instalador {
-            margin-top: 30px;
-            padding: 20px 0;
-            text-align: center;
-            border-top: 1px solid #282828;
-        }
-
         .btn-instalar {
-            background-color: #ffffff;
-            color: #000;
-            padding: 15px;
-            border-radius: 50px;
-            font-weight: bold;
-            width: 100%;
-            border: none;
-            cursor: pointer;
-            text-transform: uppercase;
-            font-size: 0.9rem;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 10px;
+            background-color: #ffffff; color: #000; padding: 15px;
+            border-radius: 50px; font-weight: bold; width: 100%;
+            border: none; cursor: pointer; text-transform: uppercase;
+            font-size: 0.85rem; margin-top: 20px;
         }
     </style>
 </head>
@@ -104,27 +83,29 @@
     <p>Tu guía interactiva para el idioma Inca</p>
 
     <div class="banner-inicio">
-        <span class="tag-negro">CONTINUAR</span>
-        <h2>Lección 01: Pronombres</h2>
-        <a href="pagina2.html" style="display:inline-block; background:#fff; color:#000; padding:10px 20px; border-radius:20px; font-weight:bold; margin-top:10px;">▶️ PLAY</a>
+        <span class="tag-negro">NUEVO CONTENIDO</span>
+        <h2>Resumen Teórico</h2>
+        <a href="lecciones.html" style="display:inline-block; background:#fff; color:#000; padding:10px 20px; border-radius:20px; font-weight:bold; margin-top:10px;">▶️ VER LECCIONES</a>
     </div>
 
-    <h3 class="seccion-titulo">Módulos Principales</h3>
+    <h3 class="seccion-titulo">Módulos</h3>
 
-    <a href="pagina2.html" class="tarjeta-item" style="border-left: 5px solid #1DB954;">
+    <a href="lecciones.html" class="tarjeta-item" style="border-left: 5px solid #1DB954;">
         <div class="icono-caja">📚</div>
         <div class="info">
             <span class="nombre">Lecciones</span>
-            <span class="sub">Accede a todo el contenido educativo</span>
+            <span class="sub">Resumen de Pronombres y Saludos</span>
         </div>
         <span style="margin-left: auto; color: #1DB954;">➔</span>
     </a>
 
+    <h3 class="seccion-titulo">Prácticas Interactivas</h3>
+
     <a href="pagina2.html" class="tarjeta-item">
         <div class="icono-caja">🦙</div>
         <div class="info">
-            <span class="nombre">Pronombres</span>
-            <span class="sub">Yo, Tú, Él... Nivel 1</span>
+            <span class="nombre">Práctica: Pronombres</span>
+            <span class="sub">Pon a prueba tu memoria</span>
         </div>
         <span style="margin-left: auto; color: #1DB954;">➔</span>
     </a>
@@ -132,49 +113,29 @@
     <a href="pagina3.html" class="tarjeta-item">
         <div class="icono-caja">👋</div>
         <div class="info">
-            <span class="nombre">Saludos</span>
-            <span class="sub">Frases de cortesía y despedida</span>
+            <span class="nombre">Práctica: Saludos</span>
+            <span class="sub">Diálogo y cortesía</span>
         </div>
         <span style="margin-left: auto; color: #1DB954;">➔</span>
     </a>
 
-    <a href="#" class="tarjeta-item">
-        <div class="icono-caja">📖</div>
-        <div class="info">
-            <span class="nombre">Vocabulario</span>
-            <span class="sub">Diccionario visual interactivo</span>
-        </div>
-        <span style="margin-left: auto; color: #b3b3b3;">⌛</span>
-    </a>
+    <h3 class="seccion-titulo">Evaluación</h3>
 
-    <a href="#" class="tarjeta-item">
-        <div class="icono-caja">🎮</div>
-        <div class="info">
-            <span class="nombre">Juegos</span>
-            <span class="sub">Practica mientras te diviertes</span>
-        </div>
-        <span style="margin-left: auto; color: #b3b3b3;">⌛</span>
-    </a>
-
-    <a href="pagina4.html" class="tarjeta-item" style="border: 2px solid #1DB954; background-color: #1a1a1a;">
+    <a href="pagina4.html" class="tarjeta-item" style="border: 1px solid #1DB954;">
         <div class="icono-caja" style="background:#1DB954; color:#000;">🎓</div>
         <div class="info">
             <span class="nombre">Examen Final</span>
-            <span class="sub">Mide tu progreso y obtén tu nota</span>
+            <span class="sub">Mide tu nivel actual</span>
         </div>
         <span style="margin-left: auto; color: #1DB954;">➔</span>
     </a>
 
-    <div class="seccion-instalador" id="install-area" style="display: none;">
-        <p style="margin-bottom: 15px; font-size: 0.85rem; color: #b3b3b3;">Agrégalo a tu pantalla de inicio como App</p>
-        <button id="btn-instalar-pwa" class="btn-instalar">
-            📲 INSTALAR APP LLAMA
-        </button>
+    <div id="install-area" style="display: none; text-align: center; margin-top: auto; padding-bottom: 30px;">
+        <button id="btn-instalar-pwa" class="btn-instalar">📲 INSTALAR APP LLAMA</button>
     </div>
 </div>
 
 <script>
-    /* LÓGICA DEL INSTALADOR PWA */
     let eventoInstalacion;
     const areaInstalacion = document.getElementById('install-area');
     const botonInstalar = document.getElementById('btn-instalar-pwa');
@@ -188,12 +149,14 @@
     botonInstalar.addEventListener('click', async () => {
         if (eventoInstalacion) {
             eventoInstalacion.prompt();
-            const { outcome } = await eventoInstalacion.userChoice;
             eventoInstalacion = null;
             areaInstalacion.style.display = 'none';
         }
     });
 </script>
+
+</body>
+</html>
 
 </body>
 </html>
