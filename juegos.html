@@ -1,1 +1,127 @@
 
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Juegos Quechua 🎮</title>
+    <style>
+        body { background-color: #000; color: #fff; font-family: 'Segoe UI', sans-serif; margin: 0; display: flex; justify-content: center; }
+        .contenedor { width: 100%; max-width: 500px; background-color: #121212; min-height: 100vh; padding: 20px; box-sizing: border-box; text-align: center; }
+        
+        h1 { color: #1DB954; margin-bottom: 5px; }
+        .puntos { font-size: 1.2rem; margin-bottom: 20px; color: #b3b3b3; }
+
+        /* ESTILO DE LA CARTA */
+        .area-juego { display: flex; justify-content: center; align-items: center; min-height: 300px; }
+        
+        .carta {
+            width: 250px; height: 350px;
+            background-color: #181818;
+            border: 2px solid #1DB954;
+            border-radius: 20px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            transition: transform 0.6s;
+            transform-style: preserve-3d;
+            position: relative;
+        }
+
+        .carta.volteada { transform: rotateY(180deg); }
+
+        .cara {
+            position: absolute;
+            width: 100%; height: 100%;
+            backface-visibility: hidden;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            border-radius: 18px;
+        }
+
+        .cara-atras { background-color: #1DB954; color: #000; transform: rotateY(180deg); }
+
+        .palabra { font-size: 2rem; font-weight: bold; margin: 10px; }
+        .instruccion { font-size: 0.8rem; opacity: 0.7; margin-top: 20px; }
+
+        .btn-siguiente {
+            background-color: #fff; color: #000;
+            padding: 15px 30px; border-radius: 50px;
+            font-weight: bold; text-decoration: none;
+            display: inline-block; margin-top: 30px;
+            cursor: pointer; border: none;
+        }
+
+        .btn-volver { display: block; color: #b3b3b3; text-decoration: none; margin-top: 40px; font-size: 0.9rem; }
+    </style>
+</head>
+<body>
+
+<div class="contenedor">
+    <h1>Reto de Memoria 🧠</h1>
+    <div class="puntos">Palabra: <span id="num-pregunta">1</span> / 5</div>
+
+    <div class="area-juego">
+        <div class="carta" id="card" onclick="voltearCarta()">
+            <div class="cara cara-frente">
+                <span style="font-size: 3rem;">🦙</span>
+                <div class="palabra" id="txt-quechua">Ñuqa</div>
+                <div class="instruccion">Toca para ver traducción</div>
+            </div>
+            <div class="cara cara-atras">
+                <span style="font-size: 3rem;">✨</span>
+                <div class="palabra" id="txt-espanol">Yo</div>
+                <div class="instruccion">¡Muy bien!</div>
+            </div>
+        </div>
+    </div>
+
+    <button class="btn-siguiente" onclick="siguientePalabra()">SIGUIENTE ➔</button>
+
+    <a href="index.html" class="btn-volver">🏠 Volver al menú</a>
+</div>
+
+<script>
+    const datos = [
+        { q: "Ñuqa", e: "Yo" },
+        { q: "Allillanchu?", e: "¿Cómo estás?" },
+        { q: "Paykuna", e: "Ellos / Ellas" },
+        { q: "Sulpayki", e: "Gracias" },
+        { q: "Tupananchikkama", e: "Hasta pronto" }
+    ];
+
+    let indice = 0;
+    const card = document.getElementById('card');
+    const txtQuechua = document.getElementById('txt-quechua');
+    const txtEspanol = document.getElementById('txt-espanol');
+    const numPregunta = document.getElementById('num-pregunta');
+
+    function voltearCarta() {
+        card.classList.toggle('volteada');
+    }
+
+    function siguientePalabra() {
+        // Primero volteamos la carta a su estado original si estaba de espaldas
+        card.classList.remove('volteada');
+        
+        setTimeout(() => {
+            indice++;
+            if (indice >= datos.length) {
+                indice = 0; // Reinicia el juego
+                alert("¡Felicidades Luis! Completaste el repaso.");
+            }
+            
+            // Actualizar textos
+            txtQuechua.innerText = datos[indice].q;
+            txtEspanol.innerText = datos[indice].e;
+            numPregunta.innerText = indice + 1;
+        }, 300);
+    }
+</script>
+
+</body>
+</html>
