@@ -1,0 +1,16 @@
+{
+  "name": "Aprende Quechua",
+  "short_name": "Quechua App",
+  "start_url": "index.html",
+  "display": "standalone",
+  "background_color": "#121212",
+  "theme_color": "#1DB954",
+  "icons": [
+    {
+      "src": "https://cdn-icons-png.flaticon.com/512/2194/2194822.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}
