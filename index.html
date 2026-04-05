@@ -3,67 +3,61 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Aprende Quechua - Inicio</title>
+    <title>Aprende Quechua</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
 <div class="contenedor">
-    <header class="header-inicio">
-        <h1>Aprende Quechua 🦙</h1>
-        <p>Tu playlist para dominar el idioma de los Incas</p>
+    <header>
+        <h1 class="titulo-app">APRENDE QUECHUA 🦙</h1>
+        <p class="subtitulo">Tu playlist para dominar el idioma de los Incas</p>
     </header>
 
-    <div class="banner-principal">
-        <div class="banner-contenido">
-            <span class="etiqueta">LECCIÓN DEL DÍA</span>
-            <h2>Los Pronombres Personales</h2>
-            <p>Aprende a identificarte y a identificar a los demás en Quechua.</p>
-            <a href="pagina2.html" class="btn-play">▶️ EMPEZAR LECCIÓN</a>
-        </div>
+    <div class="banner-inicio">
+        <span class="tag-verde">LECCIÓN DEL DÍA</span>
+        <h2>Los Pronombres Personales</h2>
+        <p>Aprende a identificarte y a identificar a los demás en Quechua.</p>
+        <a href="pagina2.html" class="btn-principal">▶️ EMPEZAR LECCIÓN</a>
     </div>
 
-    <h2 class="titulo-seccion">Tus Cursos</h2>
-    <div class="grid-albumes">
-        
-        <a href="pagina2.html" class="tarjeta-album">
-            <div class="imagen-album">🦙</div>
-            <div class="info-album">
-                <span class="nombre">Pronombres</span>
-                <span class="artista">Nivel Básico</span>
+    <h3 class="seccion-titulo">Tus Cursos</h3>
+
+    <div class="lista-cursos">
+        <a href="pagina2.html" class="tarjeta-curso">
+            <div class="icono-caja">🦙</div>
+            <div class="info-curso">
+                <span class="nombre-curso">Pronombres Nivel Básico</span>
+                <span class="estado-curso">Disponible ahora</span>
             </div>
         </a>
 
-        <div class="tarjeta-album bloqueada">
-            <div class="imagen-album">🏠</div>
-            <div class="info-album">
-                <span class="nombre">La Familia</span>
-                <span class="artista">Próximamente</span>
+        <div class="tarjeta-curso bloqueado">
+            <div class="icono-caja">🏠</div>
+            <div class="info-curso">
+                <span class="nombre-curso">La Familia</span>
+                <span class="estado-curso">Próximamente</span>
             </div>
         </div>
 
-        <div class="tarjeta-album bloqueada">
-            <div class="imagen-album">🍎</div>
-            <div class="info-album">
-                <span class="nombre">Alimentos</span>
-                <span class="artista">Próximamente</span>
+        <div class="tarjeta-curso bloqueado">
+            <div class="icono-caja">🍎</div>
+            <div class="info-curso">
+                <span class="nombre-curso">Alimentos</span>
+                <span class="estado-curso">Próximamente</span>
             </div>
         </div>
-
     </div>
 
-    <footer class="reproductor-fijo">
-        <div class="info-track">
-            <span class="icon-llama">🦙</span>
-            <div>
-                <p class="track-nombre">Aprendiendo ahora...</p>
-                <p class="track-sub">Lección 1: Pronombres</p>
-            </div>
+    <footer class="controles-footer">
+        <div class="reproduciendo-ahora">
+            <p>Aprendiendo ahora...</p>
+            <span>Lección 1: Pronombres</span>
         </div>
-        <div class="controles-falsos">
-            <span>⏮️</span>
-            <span class="play-falso">▶️</span>
-            <span>⏭️</span>
+        <div class="botones-reproductor">
+            <button class="btn-control">⏮</button>
+            <button class="btn-control play">▶</button>
+            <button class="btn-control">⏭</button>
         </div>
     </footer>
 </div>
