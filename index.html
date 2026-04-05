@@ -32,7 +32,6 @@
         h1 { color: #1DB954; text-align: center; font-size: 1.8rem; margin: 10px 0; }
         p { color: #b3b3b3; text-align: center; font-size: 0.9rem; margin-bottom: 20px; }
         
-        /* Enlaces estilo bloque para que toda la caja sea clickeable */
         .link-caja { text-decoration: none; color: inherit; display: block; margin-bottom: 12px; }
 
         .banner-inicio {
@@ -98,13 +97,13 @@
 
 <div class="contenedor">
     <h1>APRENDE QUECHUA 🦙</h1>
-    <p>Tu guía interactiva para el idioma Inca</p>
+    <p>¡Tu App interactiva está lista!</p>
 
     <a href="./lecciones.html" class="link-caja">
         <div class="banner-inicio">
-            <span style="color:#000; font-size:0.7rem; font-weight:900;">TEORÍA DISPONIBLE</span>
+            <span style="color:#000; font-size:0.7rem; font-weight:900;">TEORÍA</span>
             <h2>Resumen de Temas</h2>
-            <div class="btn-blanco">▶️ VER LECCIONES</div>
+            <div class="btn-blanco">▶️ REPASAR</div>
         </div>
     </a>
 
@@ -115,7 +114,18 @@
             <div class="icono-caja">📚</div>
             <div class="info">
                 <span class="nombre">Lecciones</span>
-                <span class="sub">Teoría de Pronombres y Saludos</span>
+                <span class="sub">Teoría y explicación</span>
+            </div>
+            <span style="margin-left: auto; color: #1DB954;">➔</span>
+        </div>
+    </a>
+
+    <a href="./juegos.html" class="link-caja">
+        <div class="tarjeta-item">
+            <div class="icono-caja">🎮</div>
+            <div class="info">
+                <span class="nombre">Juegos</span>
+                <span class="sub">Reto de memoria 3D</span>
             </div>
             <span style="margin-left: auto; color: #1DB954;">➔</span>
         </div>
@@ -125,18 +135,8 @@
         <div class="tarjeta-item">
             <div class="icono-caja">🦙</div>
             <div class="info">
-                <span class="nombre">Práctica: Pronombres</span>
-                <span class="sub">Nivel 1 básico</span>
-            </div>
-        </div>
-    </a>
-
-    <a href="./pagina3.html" class="link-caja">
-        <div class="tarjeta-item">
-            <div class="icono-caja">👋</div>
-            <div class="info">
-                <span class="nombre">Práctica: Saludos</span>
-                <span class="sub">Cortesía en Quechua</span>
+                <span class="nombre">Pronombres</span>
+                <span class="sub">Práctica interactiva</span>
             </div>
         </div>
     </a>
@@ -146,7 +146,7 @@
             <div class="icono-caja" style="background:#1DB954; color:#000;">🎓</div>
             <div class="info">
                 <span class="nombre">Examen Final</span>
-                <span class="sub">Mide tu conocimiento</span>
+                <span class="sub">Obtén tu certificado</span>
             </div>
         </div>
     </a>
@@ -157,6 +157,7 @@
 </div>
 
 <script>
+    /* LÓGICA DEL INSTALADOR */
     let eventoInstalacion;
     const areaInstalacion = document.getElementById('install-area');
     const botonInstalar = document.getElementById('btn-instalar-pwa');
@@ -174,6 +175,10 @@
             areaInstalacion.style.display = 'none';
         }
     });
+</script>
+
+</body>
+</html>
 </script>
 
 </body>
