@@ -9,7 +9,7 @@
     <meta name="theme-color" content="#1DB954">
 
     <style>
-        /* --- ESTILO GLOBAL APP --- */
+        /* --- ESTILO BASE TIPO APP --- */
         body {
             background-color: #000000;
             color: #FFFFFF;
@@ -21,7 +21,7 @@
 
         .contenedor {
             width: 100%;
-            max-width: 500px; /* Tamaño celular en PC */
+            max-width: 500px;
             background-color: #121212;
             min-height: 100vh;
             padding: 20px;
@@ -36,20 +36,20 @@
         p { color: #b3b3b3; text-align: center; font-size: 0.9rem; margin-bottom: 20px; }
         a { text-decoration: none; color: inherit; }
 
-        /* BANNER PRINCIPAL */
+        /* BANNER SUPERIOR */
         .banner-inicio {
             background: linear-gradient(180deg, #1DB954 0%, #121212 100%);
             padding: 25px;
             border-radius: 15px;
             margin-bottom: 25px;
         }
-        .banner-inicio h2 { color: #000; margin: 5px 0; font-size: 1.6rem; text-align: left; }
+        .banner-inicio h2 { color: #000; margin: 5px 0; font-size: 1.6rem; }
         .tag-negro { color: #000; font-weight: 900; font-size: 0.7rem; }
 
-        /* TARJETAS DE CURSOS */
-        .seccion-titulo { margin: 20px 0 10px 0; font-size: 1.2rem; text-align: left; }
+        /* CAJITAS / TARJETAS */
+        .seccion-titulo { margin: 20px 0 10px 0; font-size: 1.2rem; }
         
-        .tarjeta-curso {
+        .tarjeta-item {
             display: flex;
             align-items: center;
             background-color: #181818;
@@ -59,116 +59,136 @@
             border: 1px solid #282828;
             transition: 0.3s;
         }
-        .tarjeta-curso:hover { background-color: #282828; transform: scale(1.02); }
+        .tarjeta-item:hover { background-color: #282828; transform: scale(1.02); }
 
         .icono-caja {
             background-color: #282828;
-            width: 55px; height: 55px;
+            width: 50px; height: 50px;
             display: flex; align-items: center; justify-content: center;
-            border-radius: 10px; font-size: 1.8rem; margin-right: 15px;
+            border-radius: 10px; font-size: 1.5rem; margin-right: 15px;
         }
 
-        .info-curso .nombre { display: block; font-weight: bold; font-size: 1.1rem; }
-        .info-curso .sub { font-size: 0.8rem; color: #b3b3b3; }
+        .info .nombre { display: block; font-weight: bold; font-size: 1rem; color: #fff; }
+        .info .sub { font-size: 0.8rem; color: #b3b3b3; }
         
-        .bloqueado { opacity: 0.5; filter: grayscale(1); cursor: not-allowed; }
+        /* BOTÓN INSTALAR */
+        .seccion-instalador {
+            margin-top: auto;
+            padding: 20px 0;
+            text-align: center;
+            border-top: 1px solid #282828;
+        }
 
-        /* BOTONES */
-        .btn-blanco {
-            display: inline-block;
+        .btn-instalar {
             background-color: #ffffff;
             color: #000;
-            padding: 12px 25px;
+            padding: 15px;
             border-radius: 50px;
             font-weight: bold;
-            margin-top: 15px;
-            font-size: 0.85rem;
+            width: 100%;
+            border: none;
+            cursor: pointer;
             text-transform: uppercase;
+            font-size: 0.9rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
         }
 
-        #install-container {
-            margin: 20px 0;
-            padding: 15px;
-            background-color: #181818;
-            border-radius: 12px;
-            border: 1px dashed #1DB954;
-            text-align: center;
-        }
+        .bloqueado { opacity: 0.5; filter: grayscale(1); cursor: not-allowed; }
     </style>
 </head>
 <body>
 
 <div class="contenedor">
     <h1>APRENDE QUECHUA 🦙</h1>
-    <p>¡Dominando el idioma de los Incas!</p>
+    <p>Tu guía interactiva para el idioma Inca</p>
 
     <div class="banner-inicio">
-        <span class="tag-negro">RECOMENDADO</span>
+        <span class="tag-negro">CONTINUAR</span>
         <h2>Lección 01: Pronombres</h2>
-        <a href="pagina2.html" class="btn-blanco">▶️ EMPEZAR AHORA</a>
+        <a href="pagina2.html" style="display:inline-block; background:#fff; color:#000; padding:10px 20px; border-radius:20px; font-weight:bold; margin-top:10px;">▶️ PLAY</a>
     </div>
 
-    <div id="install-container" style="display: none;">
-        <span style="font-size: 0.8rem; color: #1DB954; display: block; margin-bottom: 10px;">¡Úsalo como una aplicación!</span>
-        <button id="btn-instalar" class="btn-blanco" style="margin-top: 0; width: 100%;">📲 INSTALAR APP LLAMA</button>
-    </div>
+    <h3 class="seccion-titulo">Módulos de Aprendizaje</h3>
 
-    <h3 class="seccion-titulo">Tus Lecciones</h3>
-
-    <a href="pagina2.html" class="tarjeta-curso">
+    <a href="pagina2.html" class="tarjeta-item">
         <div class="icono-caja">🦙</div>
-        <div class="info-curso">
-            <span class="nombre">01. Pronombres</span>
-            <span class="sub">7 palabras • Interactivo</span>
+        <div class="info">
+            <span class="nombre">Pronombres</span>
+            <span class="sub">Yo, Tú, Él... Nivel 1</span>
         </div>
-        <span style="margin-left: auto; color: #1DB954; font-weight: bold;">➔</span>
+        <span style="margin-left: auto; color: #1DB954;">➔</span>
     </a>
 
-    <a href="pagina3.html" class="tarjeta-curso">
+    <a href="pagina3.html" class="tarjeta-item">
         <div class="icono-caja">👋</div>
-        <div class="info-curso">
-            <span class="nombre">02. Saludos</span>
+        <div class="info">
+            <span class="nombre">Saludos</span>
             <span class="sub">Frases de cortesía</span>
         </div>
-        <span style="margin-left: auto; color: #1DB954; font-weight: bold;">➔</span>
+        <span style="margin-left: auto; color: #1DB954;">➔</span>
     </a>
 
-    <a href="pagina4.html" class="tarjeta-curso" style="border-color: #1DB954;">
-        <div class="icono-caja" style="background: #1DB954; color: #000;">🎓</div>
-        <div class="info-curso">
+    <a href="#" class="tarjeta-item">
+        <div class="icono-caja">📖</div>
+        <div class="info">
+            <span class="nombre">Vocabulario</span>
+            <span class="sub">Diccionario visual</span>
+        </div>
+        <span style="margin-left: auto; color: #b3b3b3;">⌛</span>
+    </a>
+
+    <a href="#" class="tarjeta-item">
+        <div class="icono-caja">🎮</div>
+        <div class="info">
+            <span class="nombre">Juegos</span>
+            <span class="sub">Aprende jugando</span>
+        </div>
+        <span style="margin-left: auto; color: #b3b3b3;">⌛</span>
+    </a>
+
+    <a href="pagina4.html" class="tarjeta-item" style="border: 2px solid #1DB954;">
+        <div class="icono-caja" style="background:#1DB954; color:#000;">🎓</div>
+        <div class="info">
             <span class="nombre">Examen Final</span>
-            <span class="sub">Pon a prueba tu nivel</span>
+            <span class="sub">Pon a prueba tu conocimiento</span>
         </div>
-        <span style="margin-left: auto; color: #1DB954; font-weight: bold;">➔</span>
+        <span style="margin-left: auto; color: #1DB954;">➔</span>
     </a>
 
-    <div class="tarjeta-curso bloqueado">
-        <div class="icono-caja">🏠</div>
-        <div class="info-curso">
-            <span class="nombre">03. La Familia</span>
-            <span class="sub">Próximamente...</span>
-        </div>
+    <div class="seccion-instalador" id="install-area" style="display: none;">
+        <p style="margin-bottom: 15px;">¿Quieres entrar directo desde tu celular?</p>
+        <button id="btn-instalar-pwa" class="btn-instalar">
+            📲 INSTALAR APP LLAMA
+        </button>
     </div>
 </div>
 
 <script>
-    /* LÓGICA DE INSTALACIÓN PWA */
-    let deferredPrompt;
-    const installContainer = document.getElementById('install-container');
-    const btnInstalar = document.getElementById('btn-instalar');
+    /* LÓGICA DEL INSTALADOR */
+    let eventoInstalacion;
+    const areaInstalacion = document.getElementById('install-area');
+    const botonInstalar = document.getElementById('btn-instalar-pwa');
 
     window.addEventListener('beforeinstallprompt', (e) => {
+        // Evita que el navegador lance el aviso por defecto
         e.preventDefault();
-        deferredPrompt = e;
-        installContainer.style.display = 'block';
+        eventoInstalacion = e;
+        // Muestra nuestra cajita de instalación personalizada
+        areaInstalacion.style.display = 'block';
     });
 
-    btnInstalar.addEventListener('click', async () => {
-        if (deferredPrompt) {
-            deferredPrompt.prompt();
-            const { outcome } = await deferredPrompt.userChoice;
-            deferredPrompt = null;
-            installContainer.style.display = 'none';
+    botonInstalar.addEventListener('click', async () => {
+        if (eventoInstalacion) {
+            eventoInstalacion.prompt();
+            const { outcome } = await eventoInstalacion.userChoice;
+            if (outcome === 'accepted') {
+                console.log('Usuario instaló la app');
+            }
+            eventoInstalacion = null;
+            areaInstalacion.style.display = 'none';
         }
     });
 </script>
