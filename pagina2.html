@@ -1,51 +1,81 @@
+<!DOCTYPE html>
+<html lang="es">
 <head>
-<link rel="stylesheet" href="style.css">
-<meta name="viewport" content="width=device-width, initial-scale=1.0"></head>
-<!-- PAGINA 2 -->
-<div id="pagina2" class="pagina">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lección 1: Pronombres - Aprende Quechua</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
 <div class="contenedor">
-<h1>👤 Pronombres</h1>
+    <h1>🎵 Lección: Los Pronombres</h1>
+    <p style="text-align: center; color: #B3B3B3;">Selecciona la traducción correcta para cada "pista".</p>
 
-<ul>
-<li>Ñuqa → Yo</li>
-<li>Qam → Tú</li>
-<li>Pay → Él/Ella</li>
-<li>Ñuqanchik → Nosotros</li>
-</ul>
+    <div class="tarjeta-pregunta">
+        <h3>1. ¿Cómo se dice "Yo" en Quechua?</h3>
+        <div class="grupo-opciones">
+            <label class="opcion-item">
+                <input type="radio" name="p1" value="incorrecto"> <span>Qam</span>
+            </label>
+            <label class="opcion-item">
+                <input type="radio" name="p1" value="correcto"> <span>Ñuqa</span>
+            </label>
+            <label class="opcion-item">
+                <input type="radio" name="p1" value="incorrecto"> <span>Pay</span>
+            </label>
+        </div>
+    </div>
 
-<h3>Preguntas</h3>
+    <div class="tarjeta-pregunta">
+        <h3>2. ¿Qué significa "Ñuqanchik"?</h3>
+        <div class="grupo-opciones">
+            <label class="opcion-item">
+                <input type="radio" name="p2" value="correcto"> <span>Nosotros (Inclusivo)</span>
+            </label>
+            <label class="opcion-item">
+                <input type="radio" name="p2" value="incorrecto"> <span>Ustedes</span>
+            </label>
+            <label class="opcion-item">
+                <input type="radio" name="p2" value="incorrecto"> <span>Ellos</span>
+            </label>
+        </div>
+    </div>
 
-<p>6. Ñuqa:</p>
-<input type="radio" name="p6" value="a"> Yo<br>
-<input type="radio" name="p6" value="b"> Tú<br>
+    <div style="text-align: center; margin: 30px 0;">
+        <button onclick="verificarLeccion()" class="btn-principal">🎧 Verificar Respuestas</button>
+        <p id="resultado-texto" class="mensaje-feedback"></p>
+    </div>
 
-<p>7. Qam:</p>
-<input type="radio" name="p7" value="b"> Tú<br>
-<input type="radio" name="p7" value="a"> Yo<br>
-
-<p>8. Pay:</p>
-<input type="radio" name="p8" value="c"> Él/Ella<br>
-<input type="radio" name="p8" value="a"> Yo<br>
-
-<p>9. Ñuqanchik:</p>
-<input type="radio" name="p9" value="a"> Nosotros<br>
-<input type="radio" name="p9" value="b"> Tú<br>
-
-<p>10. Tú:</p>
-<input type="radio" name="p10" value="b"> Qam<br>
-<input type="radio" name="p10" value="a"> Ñuqa<br>
-
-<button onclick="verificar2()">Responder</button>
-<p id="res2" class="resultado"></p>
-
-<div class="controles-reproductor">
-    
-    <a href="index.html" class="btn-secundario">⬅️ Volver</a>
-
-    <a href="pagina3.html" class="btn-principal">➡️ Examen</a>
-
+    <div class="controles-reproductor">
+        <a href="index.html" class="btn-secundario">⬅️ Volver</a>
+        <a href="pagina3.html" id="btn-siguiente" class="btn-principal" style="display: none;">➡️ Ir al Examen</a>
+    </div>
 </div>
 
-    
-</div>
-</div>
+<script>
+function verificarLeccion() {
+    const p1 = document.querySelector('input[name="p1"]:checked');
+    const p2 = document.querySelector('input[name="p2"]:checked');
+    const feedback = document.getElementById('resultado-texto');
+    const btnSiguiente = document.getElementById('btn-siguiente');
+
+    if (!p1 || !p2) {
+        feedback.innerHTML = "⚠️ ¡Faltan canciones por marcar!";
+        feedback.style.color = "#FFCC00";
+        return;
+    }
+
+    if (p1.value === "correcto" && p2.value === "correcto") {
+        feedback.innerHTML = "✅ ¡Excelente ritmo! Todas son correctas.";
+        feedback.style.color = "#1DB954";
+        btnSiguiente.style.display = "inline-block"; // Aparece el botón para avanzar
+    } else {
+        feedback.innerHTML = "❌ Hay algo fuera de tono. Revisa tus respuestas.";
+        feedback.style.color = "#FF4136";
+    }
+}
+</script>
+
+</body>
+</html>
