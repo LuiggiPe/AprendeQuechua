@@ -98,6 +98,28 @@ img {
     box-shadow: 0 10px 30px rgba(0,0,0,0.5);
 }
 
+
+
+/* Regla específica para el botón de navegación */
+.btn-musica-nav {
+    background-color: #1DB954; /* Verde neón 🟢 */
+    color: #000000 !important; /* Texto negro para contraste */
+    padding: 15px 35px;
+    border-radius: 50px;       /* Forma de píldora 💊 */
+    text-decoration: none;     /* Quita el subrayado azul */
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 900;
+    text-transform: uppercase;
+    display: inline-block;
+    transition: all 0.3s ease;
+    border: none;
+}
+
+.btn-musica-nav:hover {
+    background-color: #1ed760;
+    transform: scale(1.08);    /* Efecto de pulso al pasar el mouse */
+    box-shadow: 0 5px 20px rgba(29, 185, 84, 0.4);
+}
 /* Pie de página */
 footer {
     padding: 40px;
