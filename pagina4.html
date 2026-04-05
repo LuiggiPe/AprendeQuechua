@@ -1,127 +1,11 @@
 
-
 <!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Examen Final - Aprende Quechua</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
-
-<div class="contenedor">
-    <h1>📝 Examen de Pronombres</h1>
-    <p style="text-align: center; color: #B3B3B3;">Demuestra que dominas los pronombres, ¡Wayki! 🦙</p>
-
-    <div id="quiz-container">
-        <div class="tarjeta-examen">
-            <span class="numero-track">01</span>
-            <div class="pregunta-info">
-                <h3>¿Cómo se dice "Ustedes" en Quechua?</h3>
-                <div class="opciones-grid">
-                    <button class="btn-opcion" onclick="marcar(this, 1, false)">Paykuna</button>
-                    <button class="btn-opcion" onclick="marcar(this, 1, true)">Qamkuna</button>
-                    <button class="btn-opcion" onclick="marcar(this, 1, false)">Ñuqayku</button>
-                </div>
-            </div>
-        </div>
-
-        <div class="tarjeta-examen">
-            <span class="numero-track">02</span>
-            <div class="pregunta-info">
-                <h3>Traduce: "Nosotros (Tú y Yo)"</h3>
-                <div class="opciones-grid">
-                    <button class="btn-opcion" onclick="marcar(this, 2, true)">Ñuqanchik</button>
-                    <button class="btn-opcion" onclick="marcar(this, 2, false)">Ñuqayku</button>
-                    <button class="btn-opcion" onclick="marcar(this, 2, false)">Pay</button>
-                </div>
-            </div>
-        </div>
-
-        <div class="tarjeta-examen">
-            <span class="numero-track">03</span>
-            <div class="pregunta-info">
-                <h3>¿Qué significa "Pay"?</h3>
-                <div class="opciones-grid">
-                    <button class="btn-opcion" onclick="marcar(this, 3, false)">Yo</button>
-                    <button class="btn-opcion" onclick="marcar(this, 3, true)">Él / Ella</button>
-                    <button class="btn-opcion" onclick="marcar(this, 3, false)">Ustedes</button>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <div id="zona-resultado" style="text-align: center; display: none; margin-top: 30px;">
-        <h2 id="puntaje-texto"></h2>
-        <p id="mensaje-final"></p>
-        <div class="controles-reproductor">
-            <a href="pagina4.html" class="btn-principal">🎮 Ir al Juego de Memoria</a>
-        </div>
-    </div>
-
-    <div style="text-align: center; margin-top: 40px;">
-        <button id="btn-finalizar" onclick="finalizarExamen()" class="btn-principal">🏆 Finalizar Examen</button>
-    </div>
-
-    <div class="controles-reproductor">
-        <a href="pagina2.html" class="btn-secundario">⬅️ Volver a Repasar</a>
-    </div>
-</div>
-
-<script>
-let respuestasCorrectas = 0;
-let preguntasRespondidas = new Set();
-
-function marcar(boton, idPregunta, esCorrecto) {
-    // Evitar marcar varias veces la misma pregunta
-    if (preguntasRespondidas.has(idPregunta)) return;
-
-    // Estilo visual de selección (como una canción seleccionada)
-    const hermanos = boton.parentElement.querySelectorAll('.btn-opcion');
-    hermanos.forEach(b => b.classList.remove('seleccionada'));
-    boton.classList.add('seleccionada');
-
-    if (esCorrecto) {
-        respuestasCorrectas++;
-    }
-    
-    preguntasRespondidas.add(idPregunta);
-}
-
-function finalizarExamen() {
-    if (preguntasRespondidas.size < 3) {
-        alert("¡Cuidado! Te faltan preguntas por responder 🦙");
-        return;
-    }
-
-    document.getElementById('quiz-container').style.display = 'none';
-    document.getElementById('btn-finalizar').style.display = 'none';
-    
-    const zonaResultado = document.getElementById('zona-resultado');
-    const puntajeTexto = document.getElementById('puntaje-texto');
-    const mensajeFinal = document.getElementById('mensaje-final');
-    
-    zonaResultado.style.display = 'block';
-    puntajeTexto.innerHTML = `Puntaje: ${respuestasCorrectas} / 3`;
-
-    if (respuestasCorrectas === 3) {
-        mensajeFinal.innerHTML = "🦙 ¡Ancha Allinmi! (Muy bien). Dominas los pronombres perfectamente.";
-        mensajeFinal.style.color = "#1DB954";
-    } else {
-        mensajeFinal.innerHTML = "¡Casi lo logras! Puedes repasar y volver a intentarlo.";
-        mensajeFinal.style.color = "#FFCC00";
-    }
-}
-</script>
-<!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Examen Final: Nivel Básico - Quechua 🦙</title>
+    <title>Examen Final - Aprende Quechua 🎓</title>
     <style>
-        /* --- CSS INTEGRADO PARA ESTILO APP --- */
         body {
             background-color: #000000;
             color: #FFFFFF;
@@ -140,142 +24,127 @@ function finalizarExamen() {
             box-sizing: border-box;
             border-left: 1px solid #282828;
             border-right: 1px solid #282828;
+            display: flex;
+            flex-direction: column;
         }
 
-        h1 { color: #1DB954; text-align: center; font-size: 1.8rem; margin: 10px 0; }
-        .subtitulo { color: #b3b3b3; text-align: center; font-size: 0.9rem; margin-bottom: 20px; }
+        h1 { color: #1DB954; text-align: center; font-size: 1.6rem; margin-top: 10px; }
+        .subtitulo { color: #b3b3b3; text-align: center; font-size: 0.85rem; margin-bottom: 20px; }
 
-        /* PREGUNTAS */
-        .tarjeta-pregunta {
+        .tarjeta-examen {
             background-color: #181818;
-            padding: 20px;
+            padding: 15px;
             border-radius: 12px;
             margin-bottom: 15px;
             border: 1px solid #282828;
         }
 
         .pregunta-titulo {
-            font-weight: bold;
-            margin-bottom: 15px;
             display: block;
+            font-weight: bold;
             color: #1DB954;
+            margin-bottom: 10px;
+            font-size: 1rem;
         }
 
-        /* OPCIONES */
         .opcion-item {
             display: flex;
             align-items: center;
             background-color: #282828;
-            padding: 12px;
+            padding: 10px;
             border-radius: 8px;
-            margin-bottom: 10px;
+            margin-bottom: 8px;
             cursor: pointer;
-            transition: 0.3s;
+            font-size: 0.9rem;
         }
-
-        .opcion-item:hover { background-color: #333; }
 
         input[type="radio"] {
-            margin-right: 15px;
+            margin-right: 12px;
             accent-color: #1DB954;
-            transform: scale(1.3);
+            transform: scale(1.2);
         }
 
-        /* BOTONES DE NAVEGACIÓN */
+        .btn-check {
+            background-color: #1DB954;
+            color: #000;
+            width: 100%;
+            padding: 15px;
+            border-radius: 50px;
+            font-weight: bold;
+            border: none;
+            cursor: pointer;
+            margin: 20px 0;
+        }
+
         .controles-footer {
-            margin-top: 30px;
             display: flex;
             gap: 10px;
-            padding-bottom: 50px;
+            padding-bottom: 40px;
+            margin-top: auto;
         }
 
-        .btn-principal {
-            flex: 2; background-color: #1DB954; color: #000;
-            text-align: center; padding: 15px; border-radius: 50px;
-            font-weight: bold; text-transform: uppercase; border: none; cursor: pointer; text-decoration: none;
-        }
-
-        .btn-secundario {
-            flex: 1; background-color: transparent; color: #FFF;
-            border: 1px solid #535353; text-align: center;
-            padding: 15px; border-radius: 50px; font-weight: bold; text-decoration: none;
-        }
-
-        #resultado-final {
+        .btn-nav {
+            flex: 1;
+            background-color: transparent;
+            color: #fff;
+            border: 1px solid #535353;
             text-align: center;
-            margin: 20px 0;
-            font-weight: 900;
-            font-size: 1.1rem;
+            padding: 12px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 0.9rem;
+        }
+
+        #resultado {
+            text-align: center;
+            padding: 15px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            display: none;
+            font-weight: bold;
         }
     </style>
 </head>
 <body>
 
 <div class="contenedor">
-    <h1>Examen: Nivel 1 🎓</h1>
-    <p class="subtitulo">Demuestra lo que sabes de Pronombres y Saludos</p>
+    <h1>Examen de Nivel 🎓</h1>
+    <p class="subtitulo">Demuestra lo aprendido sobre Pronombres y Saludos</p>
 
-    <div class="tarjeta-pregunta">
-        <span class="pregunta-titulo">1. ¿Cómo se dice "Nosotros" (Incluyente)?</span>
-        <label class="opcion-item"><input type="radio" name="p1" value="incorrecto"> <span>Paykuna</span></label>
-        <label class="opcion-item"><input type="radio" name="p1" value="correcto"> <span>Ñuqanchik</span></label>
+    <div id="resultado"></div>
+
+    <div class="tarjeta-examen">
+        <span class="pregunta-titulo">1. ¿Cómo se dice "Yo"?</span>
+        <label class="opcion-item"><input type="radio" name="p1" value="c"> <span>Ñuqa</span></label>
+        <label class="opcion-item"><input type="radio" name="p1" value="i"> <span>Qam</span></label>
     </div>
 
-    <div class="tarjeta-pregunta">
-        <span class="pregunta-titulo">2. ¿Qué significa "Allillanchu"?</span>
-        <label class="opcion-item"><input type="radio" name="p2" value="correcto"> <span>Hola / ¿Cómo estás?</span></label>
-        <label class="opcion-item"><input type="radio" name="p2" value="incorrecto"> <span>Hasta luego</span></label>
+    <div class="tarjeta-examen">
+        <span class="pregunta-titulo">2. ¿Cómo se dice "Tú"?</span>
+        <label class="opcion-item"><input type="radio" name="p2" value="i"> <span>Pay</span></label>
+        <label class="opcion-item"><input type="radio" name="p2" value="c"> <span>Qam</span></label>
     </div>
 
-    <div class="tarjeta-pregunta">
-        <span class="pregunta-titulo">3. Traduce "Ellos o Ellas":</span>
-        <label class="opcion-item"><input type="radio" name="p3" value="incorrecto"> <span>Qamkuna</span></label>
-        <label class="opcion-item"><input type="radio" name="p3" value="correcto"> <span>Paykuna</span></label>
+    <div class="tarjeta-examen">
+        <span class="pregunta-titulo">3. Nosotros (Tú y yo):</span>
+        <label class="opcion-item"><input type="radio" name="p3" value="c"> <span>Ñuqanchik</span></label>
+        <label class="opcion-item"><input type="radio" name="p3" value="i"> <span>Ñuqayku</span></label>
     </div>
 
-    <div class="tarjeta-pregunta">
-        <span class="pregunta-titulo">4. ¿Cómo respondes a "Sulpayki" (Gracias)?</span>
-        <label class="opcion-item"><input type="radio" name="p4" value="correcto"> <span>Imamanta</span></label>
-        <label class="opcion-item"><input type="radio" name="p4" value="incorrecto"> <span>Tupananchikkama</span></label>
+    <div class="tarjeta-examen">
+        <span class="pregunta-titulo">4. Nosotros (Sin ti):</span>
+        <label class="opcion-item"><input type="radio" name="p4" value="i"> <span>Qamkuna</span></label>
+        <label class="opcion-item"><input type="radio" name="p4" value="c"> <span>Ñuqayku</span></label>
     </div>
 
-    <div id="resultado-final"></div>
-
-    <div style="text-align: center; margin-bottom: 20px;">
-        <button onclick="calificarExamen()" class="btn-principal" style="width: 100%;">📊 CALIFICAR EXAMEN</button>
+    <div class="tarjeta-examen">
+        <span class="pregunta-titulo">5. Ustedes:</span>
+        <label class="opcion-item"><input type="radio" name="p5" value="c"> <span>Qamkuna</span></label>
+        <label class="opcion-item"><input type="radio" name="p5" value="i"> <span>Paykuna</span></label>
     </div>
 
-    <div class="controles-footer">
-        <a href="pagina3.html" class="btn-secundario">⬅️ Repasar</a>
-        <a href="index.html" id="btn-finalizar" class="btn-principal" style="display: none;">🏠 Volver al Inicio</a>
-    </div>
-</div>
-
-<script>
-function calificarExamen() {
-    const total = 4;
-    let aciertos = 0;
-    
-    for(let i=1; i<=total; i++) {
-        const r = document.querySelector(`input[name="p${i}"]:checked`);
-        if(r && r.value === "correcto") aciertos++;
-    }
-
-    const feedback = document.getElementById('resultado-final');
-    const btnFin = document.getElementById('btn-finalizar');
-
-    if(aciertos === total) {
-        feedback.innerHTML = "🏆 ✅ ¡Perfecto! Dominas el Quechua Básico.";
-        feedback.style.color = "#1DB954";
-        btnFin.style.display = "block";
-    } else {
-        feedback.innerHTML = `⚠️ Has acertado ${aciertos} de ${total}. <br> ¡Inténtalo de nuevo para aprobar!`;
-        feedback.style.color = "#FFD700";
-    }
-}
-</script>
-
-</body>
-</html>
-</body>
-</html>
+    <div class="tarjeta-examen">
+        <span class="pregunta-titulo">6. ¿Qué significa "Allillanchu"?</span>
+        <label class="opcion-item"><input type="radio" name="p6" value="c"> <span>¿Cómo estás?</span></label>
+        <label class="opcion-item"><input type="radio" name="p6" value="i"> <span>Adiós</span></label>
