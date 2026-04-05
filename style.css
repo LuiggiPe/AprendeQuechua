@@ -579,7 +579,63 @@ h1, h2 {
     .grid-albumes { grid-template-columns: 1fr 1fr; }
     .reproductor-fijo { justify-content: center; }
     .controles-falsos { display: none; } /* Quitamos controles en el cel para que no estorben */
+} 
+
+
+
+/*corrrigiendo la pagina principal */
+
+.contenedor {
+    max-width: 1000px; /* Evita que el contenido se estire demasiado en PC */
+    margin: 0 auto;    /* Centra todo el bloque en la pantalla */
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
 }
+
+.banner-inicio, .banner-principal {
+    background: linear-gradient(180deg, #1DB954 0%, #191414 100%);
+    border-radius: 12px;
+    padding: 40px;
+    margin: 20px 0;
+    text-align: left; /* Alineación limpia */
+    min-height: 200px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+/* Para que el título dentro del banner sea negro y resalte */
+.banner-info h2, .banner-contenido h2 {
+    color: #000 !important;
+    font-size: 2.5rem;
+    margin: 10px 0;
+    font-weight: 900;
+}
+
+.grid-inicio, .grid-albumes {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); /* Crea columnas automáticas en PC */
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.tarjeta-musica, .tarjeta-album {
+    background-color: #181818;
+    padding: 20px;
+    border-radius: 10px;
+    text-decoration: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centra la llama y el texto dentro del cuadrito */
+    transition: 0.3s;
+}
+
+.tarjeta-musica:hover {
+    background-color: #282828;
+}
+
+
 /* Pie de página */
 footer {
     padding: 40px;
