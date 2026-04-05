@@ -450,6 +450,136 @@ h1, h2 {
     }
 }
 
+/*pagina 1*/
+/* --- ESTILOS ESPECÍFICOS INDEX --- */
+
+.header-inicio {
+    padding: 20px 0;
+    text-align: left;
+}
+
+.banner-principal {
+    background: linear-gradient(180deg, #1DB954 0%, #121212 100%);
+    border-radius: 12px;
+    padding: 40px 30px;
+    margin-bottom: 30px;
+    color: #000;
+}
+
+.banner-contenido h2 {
+    font-size: 2.5rem;
+    margin: 10px 0;
+    text-align: left;
+    color: #000;
+}
+
+.etiqueta {
+    font-size: 0.8rem;
+    font-weight: 900;
+    text-transform: uppercase;
+}
+
+.btn-play {
+    background-color: #000;
+    color: #FFF !important;
+    padding: 15px 40px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 900;
+    display: inline-block;
+    margin-top: 20px;
+    transition: 0.3s;
+}
+
+.btn-play:hover {
+    transform: scale(1.05);
+    background-color: #333;
+}
+
+/* GRID DE ÁLBUMES */
+.titulo-seccion {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+.grid-albumes {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+    gap: 20px;
+    padding-bottom: 100px; /* Espacio para el footer fijo */
+}
+
+.tarjeta-album {
+    background-color: #181818;
+    padding: 15px;
+    border-radius: 8px;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.tarjeta-album:hover {
+    background-color: #282828;
+}
+
+.imagen-album {
+    background-color: #333;
+    aspect-ratio: 1/1;
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 3rem;
+    margin-bottom: 12px;
+}
+
+.info-album .nombre {
+    display: block;
+    font-weight: bold;
+    color: #FFF;
+}
+
+.info-album .artista {
+    font-size: 0.85rem;
+    color: #B3B3B3;
+}
+
+.bloqueada {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+/* FOOTER TIPO REPRODUCTOR */
+.reproductor-fijo {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: #000;
+    border-top: 1px solid #282828;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-sizing: border-box;
+}
+
+.info-track {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.track-nombre { margin: 0; font-weight: bold; font-size: 0.9rem; }
+.track-sub { margin: 0; font-size: 0.75rem; color: #B3B3B3; }
+
+/* AJUSTE CELULAR */
+@media (max-width: 600px) {
+    .banner-contenido h2 { font-size: 1.8rem; }
+    .grid-albumes { grid-template-columns: 1fr 1fr; }
+    .reproductor-fijo { justify-content: center; }
+    .controles-falsos { display: none; } /* Quitamos controles en el cel para que no estorben */
+}
 
 /* Pie de página */
 footer {
