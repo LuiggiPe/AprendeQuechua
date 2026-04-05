@@ -9,8 +9,10 @@
 <body>
 
 <div class="contenedor">
-    <h1>🦙 Lista de Pronombres</h1>
-    <p style="text-align: center; color: #B3B3B3;">Selecciona la traducción correcta para cada uno, ¡Wayki!</p>
+    <header style="padding: 20px 0;">
+        <h1>Lección 01: Pronombres 🦙</h1>
+        <p>Selecciona la traducción correcta para cada uno, ¡Wayki!</p>
+    </header>
 
     <div class="tarjeta-pregunta">
         <h3>1. Yo</h3>
@@ -68,9 +70,9 @@
         </div>
     </div>
 
-    <div style="text-align: center; margin: 30px 0;">
-        <button onclick="verificarLeccion()" class="btn-principal">🦙 Verificar Todo</button>
-        <p id="resultado-texto" style="margin-top: 15px; font-weight: bold;"></p>
+    <div style="text-align: center; margin: 40px 0;">
+        <button onclick="verificarLeccion()" class="btn-principal">🦙 VERIFICAR RESPUESTAS</button>
+        <p id="resultado-texto" style="margin-top: 20px; font-weight: 900; font-size: 1.1rem;"></p>
     </div>
 
     <div class="controles-reproductor">
@@ -84,20 +86,28 @@ function verificarLeccion() {
     const totalPreguntas = 7;
     let aciertos = 0;
     
-    for(let i=1; i<=totalPreguntas; i++) {
-        const r = document.querySelector(`input[name="p${i}"]:checked`);
-        if(r && r.value === "correcto") aciertos++;
+    // Validar cada radio button
+    for(let i = 1; i <= totalPreguntas; i++) {
+        const eleccion = document.querySelector(`input[name="p${i}"]:checked`);
+        if(eleccion && eleccion.value === "correcto") {
+            aciertos++;
+        }
     }
 
     const feedback = document.getElementById('resultado-texto');
     const btnSiguiente = document.getElementById('btn-siguiente');
 
     if (aciertos === totalPreguntas) {
-        feedback.innerHTML = "🦙 ✅ ¡Allinmi! Has aprendido los pronombres. ¡Ahora vamos por los saludos!";
+        feedback.innerHTML = "✅ ¡Allinmi! Has dominado los pronombres. ¡Sigue con los saludos!";
         feedback.style.color = "#1DB954";
+        
+        // MOSTRAR EL BOTÓN PARA IR A PAGINA 3
         btnSiguiente.style.display = "inline-block";
+        
+        // Scroll automático hacia el botón para que el usuario lo vea
+        btnSiguiente.scrollIntoView({ behavior: 'smooth' });
     } else {
-        feedback.innerHTML = `❌ Te faltan ${totalPreguntas - aciertos} correctas. ¡Sigue intentando!`;
+        feedback.innerHTML = `❌ Te faltan ${totalPreguntas - aciertos} respuestas correctas. ¡Tú puedes!`;
         feedback.style.color = "#FF4136";
         btnSiguiente.style.display = "none";
     }
