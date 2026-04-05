@@ -4,13 +4,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>Lecciones - Aprende Quechua 🦙</title>
+    <title>Aprende Quechua 🦙</title>
+    
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#1DB954">
+
     <style>
-        /* --- ESTILO APP --- */
+        /* --- ESTILO BASE TIPO APP --- */
         body {
             background-color: #000000;
             color: #FFFFFF;
-            font-family: 'Segoe UI', Roboto, sans-serif;
+            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
             margin: 0;
             display: flex;
             justify-content: center;
@@ -25,124 +29,165 @@
             box-sizing: border-box;
             border-left: 1px solid #282828;
             border-right: 1px solid #282828;
+            display: flex;
+            flex-direction: column;
         }
 
-        h1 { color: #1DB954; text-align: center; font-size: 1.8rem; margin-bottom: 5px; }
-        .sub { color: #b3b3b3; text-align: center; font-size: 0.9rem; margin-bottom: 30px; }
+        h1 { color: #1DB954; text-align: center; font-size: 1.8rem; margin: 10px 0; }
+        p { color: #b3b3b3; text-align: center; font-size: 0.9rem; margin-bottom: 20px; }
+        a { text-decoration: none; color: inherit; }
 
-        /* SECCIONES DE REPASO */
-        .seccion-repaso {
-            background-color: #181818;
+        /* BANNER SUPERIOR */
+        .banner-inicio {
+            background: linear-gradient(180deg, #1DB954 0%, #121212 100%);
+            padding: 25px;
             border-radius: 15px;
-            padding: 20px;
-            margin-bottom: 20px;
-            border: 1px solid #282828;
+            margin-bottom: 25px;
         }
+        .banner-inicio h2 { color: #000; margin: 5px 0; font-size: 1.6rem; }
+        .tag-negro { color: #000; font-weight: 900; font-size: 0.7rem; }
 
-        .titulo-tema {
-            color: #1DB954;
-            font-weight: bold;
-            font-size: 1.2rem;
-            margin-bottom: 15px;
+        /* CAJITAS / TARJETAS */
+        .seccion-titulo { margin: 20px 0 10px 0; font-size: 1.2rem; font-weight: bold; }
+        
+        .tarjeta-item {
             display: flex;
             align-items: center;
-            gap: 10px;
-        }
-
-        /* TABLAS RESUMEN */
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            margin-top: 10px;
-        }
-
-        th {
-            text-align: left;
-            color: #b3b3b3;
-            font-size: 0.8rem;
-            text-transform: uppercase;
-            padding-bottom: 8px;
-            border-bottom: 1px solid #282828;
-        }
-
-        td {
-            padding: 10px 0;
-            border-bottom: 1px solid #282828;
-            font-size: 0.95rem;
-        }
-
-        .quechua { color: #1DB954; font-weight: bold; }
-        .espanol { color: #ffffff; }
-
-        /* BOTÓN VOLVER */
-        .btn-volver {
-            display: block;
-            background-color: transparent;
-            color: #ffffff;
-            text-align: center;
+            background-color: #181818;
             padding: 15px;
-            border-radius: 50px;
-            text-decoration: none;
-            font-weight: bold;
-            border: 1px solid #535353;
-            margin-top: 30px;
+            border-radius: 12px;
+            margin-bottom: 12px;
+            border: 1px solid #282828;
             transition: 0.3s;
         }
+        .tarjeta-item:hover { background-color: #282828; transform: scale(1.02); }
 
-        .btn-volver:hover {
+        .icono-caja {
             background-color: #282828;
+            width: 50px; height: 50px;
+            display: flex; align-items: center; justify-content: center;
+            border-radius: 10px; font-size: 1.5rem; margin-right: 15px;
+        }
+
+        .info .nombre { display: block; font-weight: bold; font-size: 1rem; color: #fff; }
+        .info .sub { font-size: 0.8rem; color: #b3b3b3; }
+        
+        /* BOTÓN INSTALAR */
+        .seccion-instalador {
+            margin-top: 30px;
+            padding: 20px 0;
+            text-align: center;
+            border-top: 1px solid #282828;
+        }
+
+        .btn-instalar {
+            background-color: #ffffff;
+            color: #000;
+            padding: 15px;
+            border-radius: 50px;
+            font-weight: bold;
+            width: 100%;
+            border: none;
+            cursor: pointer;
+            text-transform: uppercase;
+            font-size: 0.9rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
         }
     </style>
 </head>
 <body>
 
 <div class="contenedor">
-    <h1>Lecciones 📚</h1>
-    <p class="sub">Resumen teórico de nivel básico</p>
+    <h1>APRENDE QUECHUA 🦙</h1>
+    <p>¡Dominando el idioma de los Incas!</p>
 
-    <div class="seccion-repaso">
-        <div class="titulo-tema">🦙 Pronombres</div>
-        <table>
-            <thead>
-                <tr>
-                    <th>Quechua</th>
-                    <th>Español</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr><td class="quechua">Ñuqa</td><td class="espanol">Yo</td></tr>
-                <tr><td class="quechua">Qam</td><td class="espanol">Tú</td></tr>
-                <tr><td class="quechua">Pay</td><td class="espanol">Él / Ella</td></tr>
-                <tr><td class="quechua">Ñuqanchik</td><td class="espanol">Nosotros (incluyente)</td></tr>
-                <tr><td class="quechua">Ñuqayku</td><td class="espanol">Nosotros (excluyente)</td></tr>
-                <tr><td class="quechua">Qamkuna</td><td class="espanol">Ustedes</td></tr>
-                <tr><td class="quechua">Paykuna</td><td class="espanol">Ellos / Ellas</td></tr>
-            </tbody>
-        </table>
+    <div class="banner-inicio">
+        <span class="tag-negro">RECOMENDADO</span>
+        <h2>Resumen de Lecciones</h2>
+        <a href="lecciones.html" style="display:inline-block; background:#fff; color:#000; padding:10px 20px; border-radius:20px; font-weight:bold; margin-top:10px;">▶️ REPASAR TEORÍA</a>
     </div>
 
-    <div class="seccion-repaso">
-        <div class="titulo-tema">👋 Saludos y Cortesía</div>
-        <table>
-            <thead>
-                <tr>
-                    <th>Quechua</th>
-                    <th>Español</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr><td class="quechua">Allillanchu?</td><td class="espanol">¿Cómo estás? / Hola</td></tr>
-                <tr><td class="quechua">Allillanmi</td><td class="espanol">Estoy bien (Respuesta)</td></tr>
-                <tr><td class="quechua">Sulpayki</td><td class="espanol">Gracias</td></tr>
-                <tr><td class="quechua">Imamanta</td><td class="espanol">De nada</td></tr>
-                <tr><td class="quechua">Tupananchikkama</td><td class="espanol">Hasta luego</td></tr>
-                <tr><td class="quechua">Paqarinkama</td><td class="espanol">Hasta mañana</td></tr>
-            </tbody>
-        </table>
+    <h3 class="seccion-titulo">Módulos Principales</h3>
+
+    <a href="lecciones.html" class="tarjeta-item" style="border-left: 5px solid #1DB954;">
+        <div class="icono-caja">📚</div>
+        <div class="info">
+            <span class="nombre">Lecciones</span>
+            <span class="sub">Teoría de Pronombres y Saludos</span>
+        </div>
+        <span style="margin-left: auto; color: #1DB954; font-weight: bold;">➔</span>
+    </a>
+
+    <h3 class="seccion-titulo">Prácticas</h3>
+
+    <a href="pagina2.html" class="tarjeta-item">
+        <div class="icono-caja">🦙</div>
+        <div class="info">
+            <span class="nombre">Práctica: Pronombres</span>
+            <span class="sub">Ejercicios de nivel básico</span>
+        </div>
+        <span style="margin-left: auto; color: #1DB954;">➔</span>
+    </a>
+
+    <a href="pagina3.html" class="tarjeta-item">
+        <div class="icono-caja">👋</div>
+        <div class="info">
+            <span class="nombre">Práctica: Saludos</span>
+            <span class="sub">Pon a prueba tus saludos</span>
+        </div>
+        <span style="margin-left: auto; color: #1DB954;">➔</span>
+    </a>
+
+    <h3 class="seccion-titulo">Evaluación y Más</h3>
+
+    <a href="pagina4.html" class="tarjeta-item" style="border: 2px solid #1DB954; background-color: #1a1a1a;">
+        <div class="icono-caja" style="background:#1DB954; color:#000;">🎓</div>
+        <div class="info">
+            <span class="nombre">Examen Final</span>
+            <span class="sub">Demuestra cuánto aprendiste</span>
+        </div>
+        <span style="margin-left: auto; color: #1DB954;">➔</span>
+    </a>
+
+    <div style="display: flex; gap: 10px; margin-top: 5px;">
+        <div class="tarjeta-item" style="flex: 1; margin-bottom: 0; opacity: 0.6;">
+            <div class="info"><span class="nombre">📖 Vocab.</span></div>
+        </div>
+        <div class="tarjeta-item" style="flex: 1; margin-bottom: 0; opacity: 0.6;">
+            <div class="info"><span class="nombre">🎮 Juegos</span></div>
+        </div>
     </div>
 
-    <a href="index.html" class="btn-volver">🏠 VOLVER AL INICIO</a>
+    <div class="seccion-instalador" id="install-area" style="display: none;">
+        <button id="btn-instalar-pwa" class="btn-instalar">
+            📲 INSTALAR APP (LLAMA)
+        </button>
+    </div>
 </div>
+
+<script>
+    /* LÓGICA DEL INSTALADOR */
+    let eventoInstalacion;
+    const areaInstalacion = document.getElementById('install-area');
+    const botonInstalar = document.getElementById('btn-instalar-pwa');
+
+    window.addEventListener('beforeinstallprompt', (e) => {
+        e.preventDefault();
+        eventoInstalacion = e;
+        areaInstalacion.style.display = 'block';
+    });
+
+    botonInstalar.addEventListener('click', async () => {
+        if (eventoInstalacion) {
+            eventoInstalacion.prompt();
+            eventoInstalacion = null;
+            areaInstalacion.style.display = 'none';
+        }
+    });
+</script>
 
 </body>
 </html>
