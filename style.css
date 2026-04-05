@@ -303,7 +303,66 @@ h1, h2 {
 }
 
 
+/*pagina 2*/
+/* Estilo de Tarjetas de Preguntas */
+.tarjeta-pregunta {
+    background-color: #181818;
+    padding: 20px;
+    border-radius: 12px;
+    margin-bottom: 20px;
+    border: 1px solid #282828;
+}
 
+.tarjeta-pregunta h3 {
+    margin-top: 0;
+    font-size: 1.1rem;
+    color: #FFFFFF;
+}
+
+/* Opciones tipo "Track" de música */
+.grupo-opciones {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.opcion-item {
+    background-color: #282828;
+    padding: 12px 15px;
+    border-radius: 8px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    transition: 0.2s;
+}
+
+.opcion-item:hover {
+    background-color: #333;
+}
+
+.opcion-item input[type="radio"] {
+    accent-color: #1DB954; /* Radio verde */
+    margin-right: 15px;
+    transform: scale(1.2);
+}
+
+.mensaje-feedback {
+    margin-top: 15px;
+    font-weight: bold;
+    font-size: 1.1rem;
+}
+
+/* Ajuste Celular */
+@media (max-width: 600px) {
+    .tarjeta-pregunta {
+        padding: 15px;
+    }
+    
+    .btn-principal, .btn-secundario {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+}
 
 
 
