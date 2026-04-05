@@ -1,76 +1,108 @@
-/* BODY Y FONDO */
-html, body {
-  height: 100%;
-  margin: 0;
-  font-family: 'Montserrat', sans-serif;
-  background: linear-gradient(135deg, #ff0066, #ffcc00, #00ffcc);
+/* Importamos fuentes modernas estilo interfaz de música */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&family=Poppins:wght@300;600&display=swap');
+
+:root {
+    --bg-dark: #121212;         /* Negro profundo tipo Spotify */
+    --bg-card: #181818;         /* Gris oscuro para tarjetas */
+    --accent-color: #1DB954;    /* Verde vibrante */
+    --text-main: #FFFFFF;
+    --text-muted: #B3B3B3;
+    --font-titles: 'Montserrat', sans-serif;
+    --font-body: 'Poppins', sans-serif;
 }
 
-/* CONTENEDOR */
-.contenedor {
-  background: rgba(255,255,255,0.95);
-  padding: 20px;
-  border-radius: 15px;
-  max-width: 800px;
-  margin: 20px auto;
-  box-shadow: 0 0 20px rgba(0,0,0,0.3);
+/* Configuración General */
+body {
+    background-color: var(--bg-dark);
+    color: var(--text-main);
+    font-family: var(--font-body);
+    margin: 0;
+    line-height: 1.6;
 }
 
-/* TITULOS */
-h1 {
-  font-family: 'Luckiest Guy', cursive;
-  font-size: 32px;
-  text-align: center;
-  color: #ffcc00;
-  text-shadow: 3px 3px #ff0066;
+/* Títulos con impacto visual */
+h1, h2, h3 {
+    font-family: var(--font-titles);
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: -1px;
+    color: var(--accent-color);
 }
 
-/* TEXTO */
-p, li {
-  font-size: 16px;
-  color: #222;
+/* Menú de Navegación Estilo Player */
+nav {
+    background-color: rgba(0, 0, 0, 0.9);
+    padding: 15px 30px;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    border-bottom: 1px solid #282828;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
-/* BOTONES */
-button {
-  width: 100%;
-  padding: 12px;
-  margin-top: 10px;
-  border: none;
-  border-radius: 10px;
-  background: linear-gradient(45deg, #ff0066, #ffcc00);
-  color: black;
-  font-weight: bold;
-  cursor: pointer;
-  transition: 0.3s;
-}
-button:hover {
-  transform: scale(1.05);
+nav a {
+    color: var(--text-muted);
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.9rem;
+    margin: 0 15px;
+    transition: 0.3s;
 }
 
-/* CARTAS */
-#tablero {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 10px;
-}
-.carta {
-  padding: 20px;
-  background: linear-gradient(45deg, #00ffcc, #ff00cc);
-  color: black;
-  font-weight: bold;
-  text-align: center;
-  border-radius: 12px;
-  cursor: pointer;
-  transition: 0.3s;
-}
-.carta:hover {
-  transform: scale(1.1);
+nav a:hover {
+    color: var(--accent-color);
+    text-shadow: 0 0 10px rgba(29, 185, 84, 0.5);
 }
 
-/* RESPONSIVE */
-@media (max-width: 600px) {
-  h1 { font-size: 22px; }
-  #tablero { grid-template-columns: repeat(2, 1fr); }
-  .carta { padding: 16px; font-size: 14px; }
+/* Tarjetas de Lecciones (Album Style) */
+.card, .leccion-item {
+    background-color: var(--bg-card);
+    border-radius: 8px;
+    padding: 20px;
+    margin: 15px;
+    transition: background-color 0.3s ease;
+    border: 1px solid transparent;
+}
+
+.card:hover {
+    background-color: #282828;
+    border-color: #333;
+    transform: translateY(-5px);
+}
+
+/* Botones estilo "Play" */
+button, .btn-primary, a.boton {
+    background-color: var(--accent-color);
+    color: black;
+    border: none;
+    padding: 12px 30px;
+    border-radius: 50px; /* Bordes muy redondeados */
+    font-weight: 700;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: transform 0.2s, background-color 0.2s;
+    display: inline-block;
+    text-decoration: none;
+}
+
+button:hover, .btn-primary:hover {
+    background-color: #1ed760;
+    transform: scale(1.05);
+}
+
+/* Imágenes de Personajes (Luisito, etc.) */
+img {
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+}
+
+/* Pie de página */
+footer {
+    padding: 40px;
+    text-align: center;
+    color: var(--text-muted);
+    font-size: 0.8rem;
+    border-top: 1px solid #282828;
 }
