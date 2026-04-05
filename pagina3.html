@@ -1,64 +1,118 @@
 
+<!DOCTYPE html>
+<html lang="es">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Examen Final - Aprende Quechua</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
 
-<!-- PAGINA 3 -->
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel="stylesheet" href="style.css"></head>
-<div id="pagina3" class="pagina">
 <div class="contenedor">
-<h1>📝 Examen Final</h1>
+    <h1>📝 Examen de Pronombres</h1>
+    <p style="text-align: center; color: #B3B3B3;">Demuestra que dominas los pronombres, ¡Wayki! 🦙</p>
 
-<form>
+    <div id="quiz-container">
+        <div class="tarjeta-examen">
+            <span class="numero-track">01</span>
+            <div class="pregunta-info">
+                <h3>¿Cómo se dice "Ustedes" en Quechua?</h3>
+                <div class="opciones-grid">
+                    <button class="btn-opcion" onclick="marcar(this, 1, false)">Paykuna</button>
+                    <button class="btn-opcion" onclick="marcar(this, 1, true)">Qamkuna</button>
+                    <button class="btn-opcion" onclick="marcar(this, 1, false)">Ñuqayku</button>
+                </div>
+            </div>
+        </div>
 
-<p>1. Rimaykullayki:</p>
-<input type="radio" name="e1" value="b"> Hola<br>
-<input type="radio" name="e1" value="a"> Gracias<br>
+        <div class="tarjeta-examen">
+            <span class="numero-track">02</span>
+            <div class="pregunta-info">
+                <h3>Traduce: "Nosotros (Tú y Yo)"</h3>
+                <div class="opciones-grid">
+                    <button class="btn-opcion" onclick="marcar(this, 2, true)">Ñuqanchik</button>
+                    <button class="btn-opcion" onclick="marcar(this, 2, false)">Ñuqayku</button>
+                    <button class="btn-opcion" onclick="marcar(this, 2, false)">Pay</button>
+                </div>
+            </div>
+        </div>
 
-<p>2. Sulpayki:</p>
-<input type="radio" name="e2" value="c"> Gracias<br>
-<input type="radio" name="e2" value="a"> Agua<br>
+        <div class="tarjeta-examen">
+            <span class="numero-track">03</span>
+            <div class="pregunta-info">
+                <h3>¿Qué significa "Pay"?</h3>
+                <div class="opciones-grid">
+                    <button class="btn-opcion" onclick="marcar(this, 3, false)">Yo</button>
+                    <button class="btn-opcion" onclick="marcar(this, 3, true)">Él / Ella</button>
+                    <button class="btn-opcion" onclick="marcar(this, 3, false)">Ustedes</button>
+                </div>
+            </div>
+        </div>
+    </div>
 
-<p>3. Allinmi kani:</p>
-<input type="radio" name="e3" value="b"> Estoy bien<br>
-<input type="radio" name="e3" value="a"> Estoy mal<br>
+    <div id="zona-resultado" style="text-align: center; display: none; margin-top: 30px;">
+        <h2 id="puntaje-texto"></h2>
+        <p id="mensaje-final"></p>
+        <div class="controles-reproductor">
+            <a href="pagina4.html" class="btn-principal">🎮 Ir al Juego de Memoria</a>
+        </div>
+    </div>
 
-<p>4. Imaynallan kashanki:</p>
-<input type="radio" name="e4" value="a"> ¿Cómo estás?<br>
-<input type="radio" name="e4" value="b"> ¿Dónde estás?<br>
+    <div style="text-align: center; margin-top: 40px;">
+        <button id="btn-finalizar" onclick="finalizarExamen()" class="btn-principal">🏆 Finalizar Examen</button>
+    </div>
 
-<p>5. Saludo:</p>
-<input type="radio" name="e5" value="b"> Rimaykullayki<br>
-<input type="radio" name="e5" value="a"> Wasi<br>
-
-<p>6. Ñuqa:</p>
-<input type="radio" name="e6" value="a"> Yo<br>
-<input type="radio" name="e6" value="b"> Tú<br>
-
-<p>7. Qam:</p>
-<input type="radio" name="e7" value="b"> Tú<br>
-<input type="radio" name="e7" value="a"> Yo<br>
-
-<p>8. Pay:</p>
-<input type="radio" name="e8" value="c"> Él/Ella<br>
-<input type="radio" name="e8" value="a"> Yo<br>
-
-<p>9. Ñuqanchik:</p>
-<input type="radio" name="e9" value="a"> Nosotros<br>
-<input type="radio" name="e9" value="b"> Tú<br>
-
-<p>10. Tú:</p>
-<input type="radio" name="e10" value="b"> Qam<br>
-<input type="radio" name="e10" value="a"> Ñuqa<br>
-
-<button type="button" onclick="examen()">Finalizar</button>
-</form>
-
-<p id="resFinal" class="resultado"></p>
-
-<div class="controles-reproductor">
-    <a href="pagina2.html" class="btn-secundario">⬅️ Repasar Pronombres</a>
-    <a href="pagina4.html" class="btn-principal">Siguiente Lección ➡️</a>
+    <div class="controles-reproductor">
+        <a href="pagina2.html" class="btn-secundario">⬅️ Volver a Repasar</a>
+    </div>
 </div>
 
-</div>
-</div>
+<script>
+let respuestasCorrectas = 0;
+let preguntasRespondidas = new Set();
+
+function marcar(boton, idPregunta, esCorrecto) {
+    // Evitar marcar varias veces la misma pregunta
+    if (preguntasRespondidas.has(idPregunta)) return;
+
+    // Estilo visual de selección (como una canción seleccionada)
+    const hermanos = boton.parentElement.querySelectorAll('.btn-opcion');
+    hermanos.forEach(b => b.classList.remove('seleccionada'));
+    boton.classList.add('seleccionada');
+
+    if (esCorrecto) {
+        respuestasCorrectas++;
+    }
+    
+    preguntasRespondidas.add(idPregunta);
+}
+
+function finalizarExamen() {
+    if (preguntasRespondidas.size < 3) {
+        alert("¡Cuidado! Te faltan preguntas por responder 🦙");
+        return;
+    }
+
+    document.getElementById('quiz-container').style.display = 'none';
+    document.getElementById('btn-finalizar').style.display = 'none';
+    
+    const zonaResultado = document.getElementById('zona-resultado');
+    const puntajeTexto = document.getElementById('puntaje-texto');
+    const mensajeFinal = document.getElementById('mensaje-final');
+    
+    zonaResultado.style.display = 'block';
+    puntajeTexto.innerHTML = `Puntaje: ${respuestasCorrectas} / 3`;
+
+    if (respuestasCorrectas === 3) {
+        mensajeFinal.innerHTML = "🦙 ¡Ancha Allinmi! (Muy bien). Dominas los pronombres perfectamente.";
+        mensajeFinal.style.color = "#1DB954";
+    } else {
+        mensajeFinal.innerHTML = "¡Casi lo logras! Puedes repasar y volver a intentarlo.";
+        mensajeFinal.style.color = "#FFCC00";
+    }
+}
+</script>
+
+</body>
+</html>
