@@ -3,64 +3,170 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lección 1: Pronombres - Aprende Quechua</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Lección 1: Pronombres - Aprende Quechua 🦙</title>
+    <style>
+        /* --- CSS INTEGRADO ESTILO APP --- */
+        body {
+            background-color: #000000;
+            color: #FFFFFF;
+            font-family: 'Segoe UI', Arial, sans-serif;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+        }
+
+        .contenedor {
+            width: 100%;
+            max-width: 500px;
+            background-color: #121212;
+            min-height: 100vh;
+            padding: 20px;
+            box-sizing: border-box;
+            border-left: 1px solid #282828;
+            border-right: 1px solid #282828;
+        }
+
+        h1 { color: #1DB954; text-align: center; font-size: 1.8rem; margin: 10px 0; }
+        .instruccion { color: #b3b3b3; text-align: center; font-size: 0.9rem; margin-bottom: 25px; }
+
+        /* TARJETAS DE PREGUNTAS */
+        .tarjeta-pregunta {
+            background-color: #181818;
+            padding: 15px;
+            border-radius: 12px;
+            margin-bottom: 15px;
+            border: 1px solid #282828;
+        }
+
+        .pregunta-texto {
+            display: block;
+            font-weight: bold;
+            color: #FFFFFF;
+            margin-bottom: 12px;
+            font-size: 1.1rem;
+        }
+
+        /* OPCIONES */
+        .opcion-item {
+            display: flex;
+            align-items: center;
+            background-color: #282828;
+            padding: 12px;
+            border-radius: 8px;
+            margin-bottom: 8px;
+            cursor: pointer;
+            transition: 0.2s;
+        }
+
+        .opcion-item:hover { background-color: #333; }
+
+        input[type="radio"] {
+            margin-right: 15px;
+            accent-color: #1DB954;
+            transform: scale(1.3);
+        }
+
+        /* NAVEGACIÓN Y FEEDBACK */
+        #feedback-texto {
+            text-align: center;
+            font-weight: bold;
+            margin: 20px 0;
+            min-height: 1.2rem;
+        }
+
+        .controles-footer {
+            margin-top: 20px;
+            display: flex;
+            gap: 10px;
+            padding-bottom: 40px;
+        }
+
+        .btn-principal {
+            flex: 2; background-color: #1DB954; color: #000;
+            text-align: center; padding: 15px; border-radius: 50px;
+            font-weight: bold; text-transform: uppercase; text-decoration: none; border: none; cursor: pointer;
+        }
+
+        .btn-secundario {
+            flex: 1; background-color: transparent; color: #FFF;
+            border: 1px solid #535353; text-align: center;
+            padding: 15px; border-radius: 50px; font-weight: bold; text-decoration: none;
+        }
+    </style>
 </head>
 <body>
 
 <div class="contenedor">
-    <header style="padding: 20px 0;">
-        <h1>Lección 01: Pronombres 🦙</h1>
-        <p>Aprende los pronombres. ¡Puedes verificar tus respuestas o seguir adelante!</p>
-    </header>
+    <h1>Pronombres 🦙</h1>
+    <p class="instruccion">Selecciona la traducción correcta para cada pronombre personal.</p>
 
     <div class="tarjeta-pregunta">
-        <h3>1. Yo</h3>
-        <div class="grupo-opciones">
-            <label class="opcion-item"><input type="radio" name="p1" value="correcto"> <span>Ñuqa</span></label>
-            <label class="opcion-item"><input type="radio" name="p1" value="incorrecto"> <span>Qam</span></label>
-        </div>
+        <span class="pregunta-texto">1. Yo</span>
+        <label class="opcion-item"><input type="radio" name="p1" value="correcto"> <span>Ñuqa</span></label>
+        <label class="opcion-item"><input type="radio" name="p1" value="incorrecto"> <span>Qam</span></label>
     </div>
 
     <div class="tarjeta-pregunta">
-        <h3>2. Tú</h3>
-        <div class="grupo-opciones">
-            <label class="opcion-item"><input type="radio" name="p2" value="incorrecto"> <span>Pay</span></label>
-            <label class="opcion-item"><input type="radio" name="p2" value="correcto"> <span>Qam</span></label>
-        </div>
+        <span class="pregunta-texto">2. Tú</span>
+        <label class="opcion-item"><input type="radio" name="p2" value="incorrecto"> <span>Pay</span></label>
+        <label class="opcion-item"><input type="radio" name="p2" value="correcto"> <span>Qam</span></label>
     </div>
 
-    <div style="text-align: center; margin: 40px 0;">
-        <button onclick="verificarLeccion()" class="btn-secundario">🔍 Verificar mis respuestas</button>
-        <p id="resultado-texto" style="margin-top: 20px; font-weight: 900; font-size: 1.1rem;"></p>
+    <div class="tarjeta-pregunta">
+        <span class="pregunta-texto">3. Él o Ella</span>
+        <label class="opcion-item"><input type="radio" name="p3" value="correcto"> <span>Pay</span></label>
+        <label class="opcion-item"><input type="radio" name="p3" value="incorrecto"> <span>Ñuqa</span></label>
     </div>
 
-    <div class="controles-reproductor">
-        <a href="index.html" class="btn-secundario">⬅️ Volver al Inicio</a>
-        <a href="pagina3.html" id="btn-siguiente" class="btn-principal">Siguiente: Saludos ➡️</a>
+    <div class="tarjeta-pregunta">
+        <span class="pregunta-texto">4. Nosotros (Tú y Yo)</span>
+        <label class="opcion-item"><input type="radio" name="p4" value="correcto"> <span>Ñuqanchik</span></label>
+        <label class="opcion-item"><input type="radio" name="p4" value="incorrecto"> <span>Ñuqayku</span></label>
+    </div>
+
+    <div class="tarjeta-pregunta">
+        <span class="pregunta-texto">5. Nosotros (Ellos y Yo, pero tú no)</span>
+        <label class="opcion-item"><input type="radio" name="p5" value="incorrecto"> <span>Qamkuna</span></label>
+        <label class="opcion-item"><input type="radio" name="p5" value="correcto"> <span>Ñuqayku</span></label>
+    </div>
+
+    <div class="tarjeta-pregunta">
+        <span class="pregunta-texto">6. Ustedes</span>
+        <label class="opcion-item"><input type="radio" name="p6" value="correcto"> <span>Qamkuna</span></label>
+        <label class="opcion-item"><input type="radio" name="p6" value="incorrecto"> <span>Paykuna</span></label>
+    </div>
+
+    <div class="tarjeta-pregunta">
+        <span class="pregunta-texto">7. Ellos o Ellas</span>
+        <label class="opcion-item"><input type="radio" name="p7" value="incorrecto"> <span>Ñuqanchik</span></label>
+        <label class="opcion-item"><input type="radio" name="p7" value="correcto"> <span>Paykuna</span></label>
+    </div>
+
+    <div id="feedback-texto"></div>
+
+    <button onclick="verificar()" class="btn-principal" style="width: 100%; margin-bottom: 10px;">🔍 Verificar</button>
+
+    <div class="controles-footer">
+        <a href="index.html" class="btn-secundario">⬅️ Inicio</a>
+        <a href="pagina3.html" class="btn-principal">Siguiente: Saludos ➡️</a>
     </div>
 </div>
 
 <script>
-function verificarLeccion() {
-    const totalPreguntas = 2; // Cambia esto a 7 si usas todas
+function verificar() {
     let aciertos = 0;
-    
-    for(let i = 1; i <= totalPreguntas; i++) {
-        const eleccion = document.querySelector(`input[name="p${i}"]:checked`);
-        if(eleccion && eleccion.value === "correcto") {
-            aciertos++;
-        }
+    const total = 7;
+    for(let i=1; i<=total; i++) {
+        const r = document.querySelector(`input[name="p${i}"]:checked`);
+        if(r && r.value === "correcto") aciertos++;
     }
-
-    const feedback = document.getElementById('resultado-texto');
-
-    if (aciertos === totalPreguntas) {
-        feedback.innerHTML = "✅ ¡Excelente! Todo correcto.";
-        feedback.style.color = "#1DB954";
+    const f = document.getElementById('feedback-texto');
+    if(aciertos === total) {
+        f.innerHTML = "✅ ¡Perfecto! Dominas los pronombres.";
+        f.style.color = "#1DB954";
     } else {
-        feedback.innerHTML = `⚠️ Tienes ${aciertos} de ${totalPreguntas}. ¡Puedes corregir o seguir a la siguiente página!`;
-        feedback.style.color = "#FFD700"; // Color amarillo/alerta
+        f.innerHTML = `⚠️ Tienes ${aciertos} de ${total} correctas. ¡Sigue practicando!`;
+        f.style.color = "#FFD700";
     }
 }
 </script>
