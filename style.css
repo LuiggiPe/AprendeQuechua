@@ -243,7 +243,63 @@ h1, h2 {
         width: 100%; /* Botones a lo ancho del celular */
         max-width: 300px;
         box-sizing: border-box;
+    } 
+
+
+
+    #tablero {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* 4 columnas en PC */
+    gap: 12px;
+    margin: 30px auto;
+    max-width: 600px;
+}
+
+/* Estilo de cada carta (Carátula de CD) */
+.carta {
+    background-color: #282828; /* Gris oscuro */
+    aspect-ratio: 1 / 1;       /* Cuadrada */
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 10px;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 0.9rem;
+    color: #B3B3B3;
+    transition: all 0.2s ease;
+    border: 2px solid transparent;
+    user-select: none; /* Evita que se seleccione el texto al dar click */
+}
+
+.carta:hover {
+    background-color: #333;
+    transform: scale(1.03);
+}
+
+/* Cuando el usuario acierta (Verde Spotify) */
+.carta.acertada {
+    background-color: #1DB954 !important;
+    color: #000000 !important;
+    box-shadow: 0 0 15px rgba(29, 185, 84, 0.4);
+    cursor: default;
+    transform: scale(1);
+}
+
+/* Ajuste para Celulares (Responsive) */
+@media (max-width: 600px) {
+    #tablero {
+        grid-template-columns: repeat(2, 1fr); /* 2 columnas en celular */
+        gap: 8px;
+        padding: 0 10px;
     }
+    
+    .carta {
+        font-size: 0.75rem; /* Letra más pequeña para que quepa el Quechua */
+    }
+} 
 }
 
 
