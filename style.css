@@ -580,7 +580,6 @@ h1, h2 {
     .reproductor-fijo { justify-content: center; }
     .controles-falsos { display: none; } /* Quitamos controles en el cel para que no estorben */
 }
-
 /* Pie de página */
 footer {
     padding: 40px;
