@@ -1,25 +1,124 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aprende Quechua 🦙</title>
+    <style>
+        /* --- ESTE ES EL CSS INTEGRADO PARA QUE NO FALLE --- */
+        body {
+            background-color: #000000;
+            color: #FFFFFF;
+            font-family: 'Segoe UI', Arial, sans-serif;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+        }
+
+        .contenedor {
+            width: 100%;
+            max-width: 500px;
+            background-color: #121212;
+            min-height: 100vh;
+            padding: 20px;
+            box-sizing: border-box;
+            border-left: 1px solid #282828;
+            border-right: 1px solid #282828;
+        }
+
+        h1 { color: #1DB954; text-align: center; font-size: 1.8rem; margin: 10px 0; }
+        p { color: #b3b3b3; text-align: center; font-size: 0.9rem; }
+        a { text-decoration: none; color: inherit; }
+
+        /* BANNER VERDE */
+        .banner-inicio {
+            background: linear-gradient(180deg, #1DB954 0%, #121212 100%);
+            padding: 30px;
+            border-radius: 15px;
+            margin: 20px 0;
+            text-align: left;
+        }
+        .banner-inicio h2 { color: #000; margin: 5px 0; font-size: 1.6rem; text-align: left; }
+        .tag-negro { color: #000; font-weight: 900; font-size: 0.7rem; }
+
+        /* TARJETAS DE CURSOS */
+        .seccion-titulo { margin: 20px 0 10px 0; font-size: 1.2rem; text-align: left; color: white; }
+        
+        .tarjeta-curso {
+            display: flex;
+            align-items: center;
+            background-color: #181818;
+            padding: 15px;
+            border-radius: 10px;
+            margin-bottom: 12px;
+            border: 1px solid #282828;
+            transition: 0.3s;
+        }
+        .tarjeta-curso:hover { background-color: #282828; }
+
+        .icono-caja {
+            background-color: #282828;
+            width: 50px; height: 50px;
+            display: flex; align-items: center; justify-content: center;
+            border-radius: 8px; font-size: 1.5rem; margin-right: 15px;
+        }
+
+        .nombre-curso { display: block; font-weight: bold; color: white; }
+        .estado-curso { font-size: 0.8rem; color: #b3b3b3; }
+        .bloqueado { opacity: 0.5; }
+
+        .btn-blanco {
+            display: inline-block;
+            background-color: #fff;
+            color: #000;
+            padding: 10px 25px;
+            border-radius: 50px;
+            font-weight: bold;
+            margin-top: 15px;
+            font-size: 0.8rem;
+        }
+    </style>
+</head>
+<body>
+
 <div class="contenedor">
     <h1>APRENDE QUECHUA 🦙</h1>
+    <p>Tu playlist para dominar el idioma de los Incas</p>
+
     <div class="banner-inicio">
         <span class="tag-negro">LECCIÓN DEL DÍA</span>
-        <h2>Pronombres Personales</h2>
-        <a href="pagina2.html" class="btn-principal" style="display:inline-block; width:auto; padding: 10px 20px; font-size:0.8rem;">▶️ EMPEZAR</a>
+        <h2>Los Pronombres Personales</h2>
+        <a href="pagina2.html" class="btn-blanco">▶️ EMPEZAR LECCIÓN</a>
     </div>
 
-    <h3>Tus Cursos</h3>
-    <a href="pagina2.html" class="tarjeta">
+    <h3 class="seccion-titulo">Tus Cursos</h3>
+
+    <a href="pagina2.html" class="tarjeta-curso">
         <div class="icono-caja">🦙</div>
-        <div>
-            <div style="font-weight:bold;">01. Pronombres</div>
-            <div style="font-size:0.8rem; color:#b3b3b3;">Disponible ahora</div>
+        <div class="info-curso">
+            <span class="nombre-curso">Pronombres Nivel Básico</span>
+            <span class="estado-curso">Disponible ahora</span>
         </div>
+        <span style="margin-left: auto; color: #1DB954; font-weight: bold;">➔</span>
     </a>
 
-    <div class="tarjeta bloqueado">
+    <div class="tarjeta-curso bloqueado">
         <div class="icono-caja">🏠</div>
-        <div>
-            <div style="font-weight:bold;">02. La Familia</div>
-            <div style="font-size:0.8rem; color:#b3b3b3;">Próximamente</div>
+        <div class="info-curso">
+            <span class="nombre-curso">La Familia</span>
+            <span class="estado-curso">Próximamente</span>
         </div>
     </div>
+
+    <div class="tarjeta-curso bloqueado">
+        <div class="icono-caja">🍎</div>
+        <div class="info-curso">
+            <span class="nombre-curso">Alimentos</span>
+            <span class="estado-curso">Próximamente</span>
+        </div>
+    </div>
+
 </div>
+
+</body>
+</html>
