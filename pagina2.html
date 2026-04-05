@@ -9,69 +9,95 @@
 <body>
 
 <div class="contenedor">
-    <h1>🦙 Lección: Los Pronombres</h1>
-    <p style="text-align: center; color: #B3B3B3;">¡Busca la traducción correcta, Wayki!</p>
+    <h1>🦙 Lista de Pronombres</h1>
+    <p style="text-align: center; color: #B3B3B3;">Selecciona la traducción correcta para cada uno, ¡Wayki!</p>
 
     <div class="tarjeta-pregunta">
-        <h3>1. ¿Cómo se dice "Yo" en Quechua?</h3>
+        <h3>1. Yo</h3>
         <div class="grupo-opciones">
-            <label class="opcion-item">
-                <input type="radio" name="p1" value="incorrecto"> <span>Qam</span>
-            </label>
-            <label class="opcion-item">
-                <input type="radio" name="p1" value="correcto"> <span>Ñuqa</span>
-            </label>
-            <label class="opcion-item">
-                <input type="radio" name="p1" value="incorrecto"> <span>Pay</span>
-            </label>
+            <label class="opcion-item"><input type="radio" name="p1" value="correcto"> <span>Ñuqa</span></label>
+            <label class="opcion-item"><input type="radio" name="p1" value="incorrecto"> <span>Qam</span></label>
         </div>
     </div>
 
     <div class="tarjeta-pregunta">
-        <h3>2. ¿Qué significa "Ñuqanchik"?</h3>
+        <h3>2. Tú</h3>
         <div class="grupo-opciones">
-            <label class="opcion-item">
-                <input type="radio" name="p2" value="correcto"> <span>Nosotros (Inclusivo)</span>
-            </label>
-            <label class="opcion-item">
-                <input type="radio" name="p2" value="incorrecto"> <span>Ustedes</span>
-            </label>
-            <label class="opcion-item">
-                <input type="radio" name="p2" value="incorrecto"> <span>Ellos</span>
-            </label>
+            <label class="opcion-item"><input type="radio" name="p2" value="incorrecto"> <span>Pay</span></label>
+            <label class="opcion-item"><input type="radio" name="p2" value="correcto"> <span>Qam</span></label>
+        </div>
+    </div>
+
+    <div class="tarjeta-pregunta">
+        <h3>3. Él o Ella</h3>
+        <div class="grupo-opciones">
+            <label class="opcion-item"><input type="radio" name="p3" value="correcto"> <span>Pay</span></label>
+            <label class="opcion-item"><input type="radio" name="p3" value="incorrecto"> <span>Ñuqa</span></label>
+        </div>
+    </div>
+
+    <div class="tarjeta-pregunta">
+        <h3>4. Nosotros (Tú y Yo)</h3>
+        <div class="grupo-opciones">
+            <label class="opcion-item"><input type="radio" name="p4" value="incorrecto"> <span>Ñuqayku</span></label>
+            <label class="opcion-item"><input type="radio" name="p4" value="correcto"> <span>Ñuqanchik</span></label>
+        </div>
+    </div>
+
+    <div class="tarjeta-pregunta">
+        <h3>5. Nosotros (Pero tú no)</h3>
+        <div class="grupo-opciones">
+            <label class="opcion-item"><input type="radio" name="p5" value="correcto"> <span>Ñuqayku</span></label>
+            <label class="opcion-item"><input type="radio" name="p5" value="incorrecto"> <span>Qamkuna</span></label>
+        </div>
+    </div>
+
+    <div class="tarjeta-pregunta">
+        <h3>6. Ustedes</h3>
+        <div class="grupo-opciones">
+            <label class="opcion-item"><input type="radio" name="p6" value="incorrecto"> <span>Paykuna</span></label>
+            <label class="opcion-item"><input type="radio" name="p6" value="correcto"> <span>Qamkuna</span></label>
+        </div>
+    </div>
+
+    <div class="tarjeta-pregunta">
+        <h3>7. Ellos o Ellas</h3>
+        <div class="grupo-opciones">
+            <label class="opcion-item"><input type="radio" name="p7" value="correcto"> <span>Paykuna</span></label>
+            <label class="opcion-item"><input type="radio" name="p7" value="incorrecto"> <span>Ñuqayku</span></label>
         </div>
     </div>
 
     <div style="text-align: center; margin: 30px 0;">
-        <button onclick="verificarLeccion()" class="btn-principal">🦙 Verificar Respuestas</button>
+        <button onclick="verificarLeccion()" class="btn-principal">🦙 Verificar Todo</button>
         <p id="resultado-texto" class="mensaje-feedback"></p>
     </div>
 
     <div class="controles-reproductor">
         <a href="index.html" class="btn-secundario">⬅️ Volver</a>
-        <a href="pagina3.html" id="btn-siguiente" class="btn-principal" style="display: none;">¡Siguiente Reto! ☀️</a>
+        <a href="pagina3.html" id="btn-siguiente" class="btn-principal" style="display: none;">¡Al Examen! ☀️</a>
     </div>
 </div>
 
 <script>
 function verificarLeccion() {
-    const p1 = document.querySelector('input[name="p1"]:checked');
-    const p2 = document.querySelector('input[name="p2"]:checked');
+    const totalPreguntas = 7;
+    let aciertos = 0;
+    
+    for(let i=1; i<=totalPreguntas; i++) {
+        const r = document.querySelector(`input[name="p${i}"]:checked`);
+        if(r && r.value === "correcto") aciertos++;
+    }
+
     const feedback = document.getElementById('resultado-texto');
     const btnSiguiente = document.getElementById('btn-siguiente');
 
-    if (!p1 || !p2) {
-        feedback.innerHTML = "🌵 ¡Faltan opciones por marcar, hermano!";
-        feedback.style.color = "#FFCC00";
-        return;
-    }
-
-    if (p1.value === "correcto" && p2.value === "correcto") {
-        feedback.innerHTML = "🦙 ✅ ¡Allinmi! (¡Está bien!) Todas son correctas.";
+    if (aciertos === totalPreguntas) {
+        feedback.innerHTML = "🦙 ✅ ¡Allinmi! Has aprendido todos los pronombres.";
         feedback.style.color = "#1DB954";
         btnSiguiente.style.display = "inline-block";
     } else {
-        feedback.innerHTML = "❌ Hay algo que no cuadra. ¡Inténtalo de nuevo!";
+        feedback.innerHTML = `❌ Te faltan ${totalPreguntas - aciertos} correctas. ¡Sigue intentando!`;
         feedback.style.color = "#FF4136";
     }
 }
