@@ -31,6 +31,17 @@
         h1 { color: #1DB954; text-align: center; font-size: 1.6rem; margin-top: 10px; }
         .subtitulo { color: #b3b3b3; text-align: center; font-size: 0.85rem; margin-bottom: 20px; }
 
+        /* RESULTADO ARRIBA */
+        #resultado {
+            text-align: center;
+            padding: 15px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            display: none;
+            font-weight: bold;
+            font-size: 1.1rem;
+        }
+
         .tarjeta-examen {
             background-color: #181818;
             padding: 15px;
@@ -44,18 +55,16 @@
             font-weight: bold;
             color: #1DB954;
             margin-bottom: 10px;
-            font-size: 1rem;
         }
 
         .opcion-item {
             display: flex;
             align-items: center;
             background-color: #282828;
-            padding: 10px;
+            padding: 12px;
             border-radius: 8px;
             margin-bottom: 8px;
             cursor: pointer;
-            font-size: 0.9rem;
         }
 
         input[type="radio"] {
@@ -64,87 +73,110 @@
             transform: scale(1.2);
         }
 
-        .btn-check {
+        /* BOTONES DE ACCIÓN */
+        .btn-calificar {
             background-color: #1DB954;
             color: #000;
             width: 100%;
-            padding: 15px;
+            padding: 18px;
             border-radius: 50px;
             font-weight: bold;
             border: none;
             cursor: pointer;
-            margin: 20px 0;
+            font-size: 1rem;
+            margin: 10px 0 30px 0;
+            text-transform: uppercase;
         }
 
-        .controles-footer {
+        .controles-navegacion {
             display: flex;
-            gap: 10px;
-            padding-bottom: 40px;
-            margin-top: auto;
+            gap: 15px;
+            padding-bottom: 50px;
+            margin-top: 20px;
         }
 
         .btn-nav {
             flex: 1;
-            background-color: transparent;
+            background-color: #282828;
             color: #fff;
-            border: 1px solid #535353;
             text-align: center;
-            padding: 12px;
+            padding: 15px;
             border-radius: 50px;
             text-decoration: none;
             font-weight: bold;
-            font-size: 0.9rem;
+            border: 1px solid #444;
         }
 
-        #resultado {
-            text-align: center;
-            padding: 15px;
-            border-radius: 10px;
-            margin-bottom: 20px;
-            display: none;
-            font-weight: bold;
+        .btn-inicio {
+            background-color: transparent;
+            border: 1px solid #1DB954;
+            color: #1DB954;
         }
     </style>
 </head>
 <body>
 
 <div class="contenedor">
-    <h1>Examen de Nivel 🎓</h1>
-    <p class="subtitulo">Demuestra lo aprendido sobre Pronombres y Saludos</p>
+    <h1>Examen Final 🎓</h1>
+    <p class="subtitulo">Completa todas las preguntas para ver tu nota</p>
 
     <div id="resultado"></div>
 
     <div class="tarjeta-examen">
-        <span class="pregunta-titulo">1. ¿Cómo se dice "Yo"?</span>
-        <label class="opcion-item"><input type="radio" name="p1" value="c"> <span>Ñuqa</span></label>
-        <label class="opcion-item"><input type="radio" name="p1" value="i"> <span>Qam</span></label>
+        <span class="pregunta-titulo">1. ¿Cómo se dice "Nosotros" (Incluyente)?</span>
+        <label class="opcion-item"><input type="radio" name="p1" value="c"> <span>Ñuqanchik</span></label>
+        <label class="opcion-item"><input type="radio" name="p1" value="i"> <span>Ñuqayku</span></label>
     </div>
 
     <div class="tarjeta-examen">
-        <span class="pregunta-titulo">2. ¿Cómo se dice "Tú"?</span>
-        <label class="opcion-item"><input type="radio" name="p2" value="i"> <span>Pay</span></label>
-        <label class="opcion-item"><input type="radio" name="p2" value="c"> <span>Qam</span></label>
+        <span class="pregunta-titulo">2. ¿Cómo se dice "Ustedes"?</span>
+        <label class="opcion-item"><input type="radio" name="p2" value="i"> <span>Paykuna</span></label>
+        <label class="opcion-item"><input type="radio" name="p2" value="c"> <span>Qamkuna</span></label>
     </div>
 
     <div class="tarjeta-examen">
-        <span class="pregunta-titulo">3. Nosotros (Tú y yo):</span>
-        <label class="opcion-item"><input type="radio" name="p3" value="c"> <span>Ñuqanchik</span></label>
-        <label class="opcion-item"><input type="radio" name="p3" value="i"> <span>Ñuqayku</span></label>
+        <span class="pregunta-titulo">3. Traduce: "Allillanchu"</span>
+        <label class="opcion-item"><input type="radio" name="p3" value="c"> <span>¿Cómo estás? / Hola</span></label>
+        <label class="opcion-item"><input type="radio" name="p3" value="i"> <span>Adiós</span></label>
     </div>
 
-    <div class="tarjeta-examen">
-        <span class="pregunta-titulo">4. Nosotros (Sin ti):</span>
-        <label class="opcion-item"><input type="radio" name="p4" value="i"> <span>Qamkuna</span></label>
-        <label class="opcion-item"><input type="radio" name="p4" value="c"> <span>Ñuqayku</span></label>
-    </div>
+    <button onclick="corregir()" class="btn-calificar">📊 Calificar Examen</button>
 
-    <div class="tarjeta-examen">
-        <span class="pregunta-titulo">5. Ustedes:</span>
-        <label class="opcion-item"><input type="radio" name="p5" value="c"> <span>Qamkuna</span></label>
-        <label class="opcion-item"><input type="radio" name="p5" value="i"> <span>Paykuna</span></label>
-    </div>
+    <hr style="border: 0; border-top: 1px solid #282828; margin-bottom: 20px;">
 
-    <div class="tarjeta-examen">
-        <span class="pregunta-titulo">6. ¿Qué significa "Allillanchu"?</span>
-        <label class="opcion-item"><input type="radio" name="p6" value="c"> <span>¿Cómo estás?</span></label>
-        <label class="opcion-item"><input type="radio" name="p6" value="i"> <span>Adiós</span></label>
+    <div class="controles-navegacion">
+        <a href="pagina3.html" class="btn-nav">⬅️ Repasar</a>
+        <a href="index.html" class="btn-nav btn-inicio">🏠 Inicio</a>
+    </div>
+</div>
+
+<script>
+function corregir() {
+    let aciertos = 0;
+    const total = 3; // Ajusta este número según cuántas preguntas pongas
+    
+    for(let i=1; i<=total; i++) {
+        const r = document.querySelector(`input[name="p${i}"]:checked`);
+        if(r && r.value === "c") aciertos++;
+    }
+
+    const res = document.getElementById('resultado');
+    res.style.display = "block";
+    
+    if(aciertos === total) {
+        res.innerHTML = "🏆 ¡EXCELENTE! Nota: " + aciertos + "/" + total;
+        res.style.backgroundColor = "#1DB954";
+        res.style.color = "#000";
+    } else {
+        res.innerHTML = "📝 Nota: " + aciertos + "/" + total + "<br>¡Revisa y vuelve a intentar!";
+        res.style.backgroundColor = "#FFD700";
+        res.style.color = "#000";
+    }
+
+    // Sube la pantalla para ver el resultado
+    window.scrollTo({top: 0, behavior: 'smooth'});
+}
+</script>
+
+</body>
+</html>
