@@ -1,28 +1,119 @@
 
-/* --- CONFIGURACIÓN BASE --- */
+/* --- RESET --- */
 body {
-    background-color: #000000; /* Fondo externo negro en PC */
-    color: #FFFFFF;
-    font-family: 'Montserrat', sans-serif;
+    background-color: #000;
+    color: #fff;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     margin: 0;
     display: flex;
-    justify-content: center; /* Centra la "App" en la pantalla de la PC */
+    justify-content: center;
 }
 
-/* EL CONTENEDOR QUE HACE QUE SE VEA COMO CELULAR EN PC */
 .contenedor {
     width: 100%;
-    max-width: 500px; /* Ancho máximo tipo celular */
+    max-width: 500px; /* Ancho de celular en PC */
+    background-color: #121212;
     min-height: 100vh;
-    background-color: #121212; /* Fondo interno de la App */
     padding: 20px;
     box-sizing: border-box;
-    border-left: 1px solid #282828;
-    border-right: 1px solid #282828;
-    display: flex;
-    flex-direction: column;
 }
 
+.titulo-app {
+    color: #1DB954;
+    text-align: center;
+    font-size: 1.8rem;
+    margin-bottom: 5px;
+}
+
+.subtitulo {
+    text-align: center;
+    color: #b3b3b3;
+    font-size: 0.9rem;
+    margin-bottom: 30px;
+}
+
+/* BANNER */
+.banner-inicio {
+    background: linear-gradient(180deg, #1DB954 0%, #121212 100%);
+    padding: 25px;
+    border-radius: 12px;
+    margin-bottom: 30px;
+}
+
+.tag-verde {
+    font-size: 0.7rem;
+    font-weight: bold;
+    color: #000;
+}
+
+.banner-inicio h2 {
+    margin: 10px 0;
+    font-size: 1.5rem;
+}
+
+.btn-principal {
+    display: inline-block;
+    background-color: #fff;
+    color: #000;
+    padding: 10px 20px;
+    border-radius: 20px;
+    text-decoration: none;
+    font-weight: bold;
+    margin-top: 15px;
+    font-size: 0.8rem;
+}
+
+/* TARJETAS DE CURSOS */
+.seccion-titulo { margin: 20px 0; font-size: 1.2rem; }
+
+.tarjeta-curso {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    background-color: #181818;
+    padding: 12px;
+    border-radius: 8px;
+    text-decoration: none;
+    color: #fff;
+    margin-bottom: 12px;
+    transition: 0.3s;
+}
+
+.tarjeta-curso:hover { background-color: #282828; }
+
+.icono-caja {
+    font-size: 1.5rem;
+    background: #282828;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.info-curso .nombre-curso { display: block; font-weight: bold; }
+.info-curso .estado-curso { font-size: 0.8rem; color: #b3b3b3; }
+
+.bloqueado { opacity: 0.5; cursor: not-allowed; }
+
+/* FOOTER REPRODUCTOR */
+.controles-footer {
+    margin-top: 40px;
+    text-align: center;
+    border-top: 1px solid #282828;
+    padding-top: 20px;
+}
+
+.reproduciendo-ahora p { font-size: 0.7rem; color: #b3b3b3; margin: 0; }
+.reproduciendo-ahora span { font-weight: bold; font-size: 0.9rem; }
+
+.botones-reproductor { margin-top: 15px; }
+.btn-control {
+    background: none;
+    border: none;
+    color: #fff;
+    font-size: 1.2rem;
+    margin: 0 10px;
+    cursor: pointer;
+}
+.play { font-size: 1.8rem; color: #1DB954; }
 /* ESTILO DE TARJETAS Y LISTAS */
 .tarjeta-pregunta, .tarjeta-album, .track-item, .banner-inicio {
     background-color: #181818;
