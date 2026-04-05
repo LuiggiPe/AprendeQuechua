@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Curso Quechua</title>
+
+<style>
+body { font-family: Arial; margin: 0; background: #f0f0f0; }
+.pagina { display: none; padding: 20px; }
+.activa { display: block; }
+.contenedor { background: white; padding: 20px; border-radius: 10px; }
+button { padding: 10px; margin-top: 10px; border: none; border-radius: 8px; background: #333; color: white; cursor:pointer;}
+.resultado { font-weight: bold; margin-top: 10px; }
+
+.carta {
+  padding: 20px;
+  background: #444;
+  color: white;
+  text-align: center;
+  cursor: pointer;
+  border-radius: 10px;
+}
+</style>
+</head>
+
+<body>
+
+<!-- PAGINA 1 -->
+<div id="pagina1" class="pagina activa">
+<div class="contenedor">
+<h1>🗣️ Saludos</h1>
+
+<p>Los saludos son clave para iniciar conversación.</p>
+
+<ul>
+<li>Rimaykullayki → Hola</li>
+<li>Sulpayki → Gracias</li>
+<li>Allinmi kani → Estoy bien</li>
+<li>Imaynallan kashanki → ¿Cómo estás?</li>
+</ul>
+
+<h3>Preguntas</h3>
+
+<p>1. Rimaykullayki:</p>
+<input type="radio" name="p1" value="b"> Hola<br>
+<input type="radio" name="p1" value="a"> Gracias<br>
+
+<p>2. Sulpayki:</p>
+<input type="radio" name="p2" value="c"> Gracias<br>
+<input type="radio" name="p2" value="a"> Agua<br>
+
+<p>3. Allinmi kani:</p>
+<input type="radio" name="p3" value="b"> Estoy bien<br>
+<input type="radio" name="p3" value="a"> Estoy mal<br>
+
+<p>4. Imaynallan kashanki:</p>
+<input type="radio" name="p4" value="a"> ¿Cómo estás?<br>
+<input type="radio" name="p4" value="b"> ¿Dónde estás?<br>
+
+<p>5. Saludo:</p>
+<input type="radio" name="p5" value="b"> Rimaykullayki<br>
+<input type="radio" name="p5" value="a"> Wasi<br>
+
+<button onclick="verificar1()">Responder</button>
+<p id="res1" class="resultado"></p>
+
+<button onclick="irPagina(2)">➡️ Pronombres</button>
+</div>
+</div>
+
+<!-- PAGINA 2 -->
+<div id="pagina2" class="pagina">
+<div class="contenedor">
+<h1>👤 Pronombres</h1>
+
+<ul>
+<li>Ñuqa → Yo</li>
+<li>Qam → Tú</li>
+<li>Pay → Él/Ella</li>
+<li>Ñuqanchik → Nosotros</li>
+</ul>
+
+<h3>Preguntas</h3>
+
+<p>6. Ñuqa:</p>
+<input type="radio" name="p6" value="a"> Yo<br>
+<input type="radio" name="p6" value="b"> Tú<br>
+
+<p>7. Qam:</p>
+<input type="radio" name="p7" value="b"> Tú<br>
+<input type="radio" name="p7" value="a"> Yo<br>
+
+<p>8. Pay:</p>
+<input type="radio" name="p8" value="c"> Él/Ella<br>
+<input type="radio" name="p8" value="a"> Yo<br>
+
+<p>9. Ñuqanchik:</p>
+<input type="radio" name="p9" value="a"> Nosotros<br>
+<input type="radio" name="p9" value="b"> Tú<br>
+
+<p>10. Tú:</p>
+<input type="radio" name="p10" value="b"> Qam<br>
+<input type="radio" name="p10" value="a"> Ñuqa<br>
+
+<button onclick="verificar2()">Responder</button>
+<p id="res2" class="resultado"></p>
+
+<button onclick="irPagina(1)">⬅️ Volver</button>
+<button onclick="irPagina(3)">➡️ Examen</button>
+</div>
+</div>
+
+<!-- PAGINA 3 -->
+<div id="pagina3" class="pagina">
+<div class="contenedor">
+<h1>📝 Examen Final</h1>
+
+<form>
+
+<p>1. Rimaykullayki:</p>
+<input type="radio" name="e1" value="b"> Hola<br>
+<input type="radio" name="e1" value="a"> Gracias<br>
+
+<p>2. Sulpayki:</p>
+<input type="radio" name="e2" value="c"> Gracias<br>
+<input type="radio" name="e2" value="a"> Agua<br>
+
+<p>3. Allinmi kani:</p>
+<input type="radio" name="e3" value="b"> Estoy bien<br>
+<input type="radio" name="e3" value="a"> Estoy mal<br>
+
+<p>4. Imaynallan kashanki:</p>
+<input type="radio" name="e4" value="a"> ¿Cómo estás?<br>
+<input type="radio" name="e4" value="b"> ¿Dónde estás?<br>
+
+<p>5. Saludo:</p>
+<input type="radio" name="e5" value="b"> Rimaykullayki<br>
+<input type="radio" name="e5" value="a"> Wasi<br>
+
+<p>6. Ñuqa:</p>
+<input type="radio" name="e6" value="a"> Yo<br>
+<input type="radio" name="e6" value="b"> Tú<br>
+
+<p>7. Qam:</p>
+<input type="radio" name="e7" value="b"> Tú<br>
+<input type="radio" name="e7" value="a"> Yo<br>
+
+<p>8. Pay:</p>
+<input type="radio" name="e8" value="c"> Él/Ella<br>
+<input type="radio" name="e8" value="a"> Yo<br>
+
+<p>9. Ñuqanchik:</p>
+<input type="radio" name="e9" value="a"> Nosotros<br>
+<input type="radio" name="e9" value="b"> Tú<br>
+
+<p>10. Tú:</p>
+<input type="radio" name="e10" value="b"> Qam<br>
+<input type="radio" name="e10" value="a"> Ñuqa<br>
+
+<button type="button" onclick="examen()">Finalizar</button>
+</form>
+
+<p id="resFinal" class="resultado"></p>
+
+<button onclick="irPagina(2)">⬅️ Volver</button>
+<button onclick="irPagina(4)">🎮 Juego</button>
+
+</div>
+</div>
+
+<!-- PAGINA 4 -->
+<div id="pagina4" class="pagina">
+<div class="contenedor">
+<h1>🃏 Juego de Memoria</h1>
+
+<div id="tablero" style="display:grid;grid-template-columns:repeat(4,1fr);gap:10px;"></div>
+
+<p id="estadoJuego" class="resultado"></p>
+
+<button onclick="iniciarJuego()">🔄 Reiniciar</button>
+<button onclick="irPagina(3)">⬅️ Volver</button>
+
+</div>
+</div>
+
+<script>
+
+// navegación
+function irPagina(n){
+document.querySelectorAll(".pagina").forEach(p=>p.classList.remove("activa"));
+document.getElementById("pagina"+n).classList.add("activa");
+if(n===4) iniciarJuego();
+}
+
+// verificar
+function verificar1(){
+let c=["b","c","b","a","b"], n=["p1","p2","p3","p4","p5"], p=0;
+n.forEach((x,i)=>document.getElementsByName(x).forEach(o=>{if(o.checked&&o.value===c[i])p++;}));
+res1.innerHTML="Resultado: "+p+"/5";
+}
+
+function verificar2(){
+let c=["a","b","c","a","b"], n=["p6","p7","p8","p9","p10"], p=0;
+n.forEach((x,i)=>document.getElementsByName(x).forEach(o=>{if(o.checked&&o.value===c[i])p++;}));
+res2.innerHTML="Resultado: "+p+"/5";
+}
+
+// examen
+function examen(){
+let c=["b","c","b","a","b","a","b","c","a","b"], p=0;
+for(let i=1;i<=10;i++){
+document.getElementsByName("e"+i).forEach(o=>{if(o.checked&&o.value===c[i-1])p++;});
+}
+resFinal.innerHTML="Puntaje final: "+p+"/10";
+}
+
+// juego memoria
+let base=[
+["Rimaykullayki","Hola"],
+["Sulpayki","Gracias"],
+["Allinmi kani","Estoy bien"],
+["Imaynallan kashanki","¿Cómo estás?"],
+["Ñuqa","Yo"],
+["Qam","Tú"],
+["Pay","Él/Ella"],
+["Ñuqanchik","Nosotros"]
+];
+
+let cartas=[], sel=[], lock=false, aciertos=0;
+
+function iniciarJuego(){
+let t=document.getElementById("tablero");
+t.innerHTML="";
+cartas=[]; sel=[]; lock=false; aciertos=0;
+
+base.forEach(p=>{
+cartas.push({t:p[0],par:p[1]});
+cartas.push({t:p[1],par:p[0]});
+});
+
+cartas.sort(()=>Math.random()-0.5);
+
+cartas.forEach(c=>{
+let d=document.createElement("div");
+d.className="carta";
+d.innerHTML="❓";
+d.dataset.t=c.t;
+d.dataset.par=c.par;
+d.onclick=()=>voltear(d);
+t.appendChild(d);
+});
+
+estadoJuego.innerHTML="Encuentra los pares";
+}
+
+function voltear(c){
+if(lock||c.innerHTML!=="❓") return;
+
+c.innerHTML=c.dataset.t;
+sel.push(c);
+
+if(sel.length===2){
+lock=true;
+let[a,b]=sel;
+
+if(a.dataset.par===b.dataset.t){
+aciertos++;
+estadoJuego.innerHTML="✅ "+aciertos+"/8";
+sel=[]; lock=false;
+if(aciertos===8) estadoJuego.innerHTML="🏆 Ganaste!";
+}else{
+setTimeout(()=>{
+a.innerHTML="❓"; b.innerHTML="❓";
+sel=[]; lock=false;
+},800);
+}
+}
+}
+
+</script>
+
+</body>
+</html>
