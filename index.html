@@ -1,154 +1,72 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Curso Quechua</title>
-<link rel="stylesheet" href="style.css">
-  
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aprende Quechua - Inicio</title>
+    <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
-<script type="text/javascript" src="https://contador.websiteout.com/js/15/7/0/0"></script>
-<!-- PAGINA 1 -->
-<div id="pagina1" class="pagina activa">
+
 <div class="contenedor">
-<h1>🗣️ Saludos</h1>
+    <header class="header-inicio">
+        <h1>Aprende Quechua 🦙</h1>
+        <p>Tu playlist para dominar el idioma de los Incas</p>
+    </header>
 
-<p>Los saludos son clave para iniciar conversación.</p>
+    <div class="banner-principal">
+        <div class="banner-contenido">
+            <span class="etiqueta">LECCIÓN DEL DÍA</span>
+            <h2>Los Pronombres Personales</h2>
+            <p>Aprende a identificarte y a identificar a los demás en Quechua.</p>
+            <a href="pagina2.html" class="btn-play">▶️ EMPEZAR LECCIÓN</a>
+        </div>
+    </div>
 
-<ul>
-<li>Rimaykullayki → Hola</li>
-<li>Sulpayki → Gracias</li>
-<li>Allinmi kani → Estoy bien</li>
-<li>Imaynallan kashanki → ¿Cómo estás?</li>
-</ul>
+    <h2 class="titulo-seccion">Tus Cursos</h2>
+    <div class="grid-albumes">
+        
+        <a href="pagina2.html" class="tarjeta-album">
+            <div class="imagen-album">🦙</div>
+            <div class="info-album">
+                <span class="nombre">Pronombres</span>
+                <span class="artista">Nivel Básico</span>
+            </div>
+        </a>
 
-<h3>Preguntas</h3>
+        <div class="tarjeta-album bloqueada">
+            <div class="imagen-album">🏠</div>
+            <div class="info-album">
+                <span class="nombre">La Familia</span>
+                <span class="artista">Próximamente</span>
+            </div>
+        </div>
 
-<p>1. Rimaykullayki:</p>
-<input type="radio" name="p1" value="b"> Hola<br>
-<input type="radio" name="p1" value="a"> Gracias<br>
+        <div class="tarjeta-album bloqueada">
+            <div class="imagen-album">🍎</div>
+            <div class="info-album">
+                <span class="nombre">Alimentos</span>
+                <span class="artista">Próximamente</span>
+            </div>
+        </div>
 
-<p>2. Sulpayki:</p>
-<input type="radio" name="p2" value="c"> Gracias<br>
-<input type="radio" name="p2" value="a"> Agua<br>
+    </div>
 
-<p>3. Allinmi kani:</p>
-<input type="radio" name="p3" value="b"> Estoy bien<br>
-<input type="radio" name="p3" value="a"> Estoy mal<br>
-
-<p>4. Imaynallan kashanki:</p>
-<input type="radio" name="p4" value="a"> ¿Cómo estás?<br>
-<input type="radio" name="p4" value="b"> ¿Dónde estás?<br>
-
-<p>5. Saludo:</p>
-<input type="radio" name="p5" value="b"> Rimaykullayki<br>
-<input type="radio" name="p5" value="a"> Wasi<br>
-
-<button onclick="verificar1()">Responder</button>
-<p id="res1" class="resultado"></p>
-
-<div class="contenedor-navegacion">
-    <a href="pagina2.html" class="btn-musica-nav">➡️ Pronombres</a>
+    <footer class="reproductor-fijo">
+        <div class="info-track">
+            <span class="icon-llama">🦙</span>
+            <div>
+                <p class="track-nombre">Aprendiendo ahora...</p>
+                <p class="track-sub">Lección 1: Pronombres</p>
+            </div>
+        </div>
+        <div class="controles-falsos">
+            <span>⏮️</span>
+            <span class="play-falso">▶️</span>
+            <span>⏭️</span>
+        </div>
+    </footer>
 </div>
-
-
-
-<script>
-
-// navegación
-function irPagina(n){
-document.querySelectorAll(".pagina").forEach(p=>p.classList.remove("activa"));
-document.getElementById("pagina"+n).classList.add("activa");
-if(n===4) iniciarJuego();
-}
-
-// verificar
-function verificar1(){
-let c=["b","c","b","a","b"], n=["p1","p2","p3","p4","p5"], p=0;
-n.forEach((x,i)=>document.getElementsByName(x).forEach(o=>{if(o.checked&&o.value===c[i])p++;}));
-res1.innerHTML="Resultado: "+p+"/5";
-}
-
-function verificar2(){
-let c=["a","b","c","a","b"], n=["p6","p7","p8","p9","p10"], p=0;
-n.forEach((x,i)=>document.getElementsByName(x).forEach(o=>{if(o.checked&&o.value===c[i])p++;}));
-res2.innerHTML="Resultado: "+p+"/5";
-}
-
-// examen
-function examen(){
-let c=["b","c","b","a","b","a","b","c","a","b"], p=0;
-for(let i=1;i<=10;i++){
-document.getElementsByName("e"+i).forEach(o=>{if(o.checked&&o.value===c[i-1])p++;});
-}
-resFinal.innerHTML="Puntaje final: "+p+"/10";
-}
-
-// juego memoria
-let base=[
-["Rimaykullayki","Hola"],
-["Sulpayki","Gracias"],
-["Allinmi kani","Estoy bien"],
-["Imaynallan kashanki","¿Cómo estás?"],
-["Ñuqa","Yo"],
-["Qam","Tú"],
-["Pay","Él/Ella"],
-["Ñuqanchik","Nosotros"]
-];
-
-let cartas=[], sel=[], lock=false, aciertos=0;
-
-function iniciarJuego(){
-let t=document.getElementById("tablero");
-t.innerHTML="";
-cartas=[]; sel=[]; lock=false; aciertos=0;
-
-base.forEach(p=>{
-cartas.push({t:p[0],par:p[1]});
-cartas.push({t:p[1],par:p[0]});
-});
-
-cartas.sort(()=>Math.random()-0.5);
-
-cartas.forEach(c=>{
-let d=document.createElement("div");
-d.className="carta";
-d.innerHTML="❓";
-d.dataset.t=c.t;
-d.dataset.par=c.par;
-d.onclick=()=>voltear(d);
-t.appendChild(d);
-});
-
-estadoJuego.innerHTML="Encuentra los pares";
-}
-
-function voltear(c){
-if(lock||c.innerHTML!=="❓") return;
-
-c.innerHTML=c.dataset.t;
-sel.push(c);
-
-if(sel.length===2){
-lock=true;
-let[a,b]=sel;
-
-if(a.dataset.par===b.dataset.t){
-aciertos++;
-estadoJuego.innerHTML="✅ "+aciertos+"/8";
-sel=[]; lock=false;
-if(aciertos===8) estadoJuego.innerHTML="🏆 Ganaste!";
-}else{
-setTimeout(()=>{
-a.innerHTML="❓"; b.innerHTML="❓";
-sel=[]; lock=false;
-},800);
-}
-}
-}
-
-</script>
 
 </body>
 </html>
