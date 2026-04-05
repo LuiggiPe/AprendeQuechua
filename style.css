@@ -120,6 +120,55 @@ img {
     transform: scale(1.08);    /* Efecto de pulso al pasar el mouse */
     box-shadow: 0 5px 20px rgba(29, 185, 84, 0.4);
 }
+
+
+
+/* Contenedor para centrar los botones */
+.controles-musica {
+    display: flex;
+    justify-content: center;
+    gap: 20px; /* Espacio entre los botones */
+    margin-top: 40px;
+    padding: 20px;
+}
+
+/* Estilo para el botón SIGUIENTE (Verde Spotify) */
+.btn-siguiente {
+    background-color: #1DB954;
+    color: #000 !important;
+    padding: 12px 30px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 900;
+    text-transform: uppercase;
+    transition: 0.3s;
+}
+
+/* Estilo para el botón VOLVER (Gris oscuro/transparente) */
+.btn-volver {
+    background-color: transparent;
+    color: #FFFFFF !important;
+    border: 2px solid #535353;
+    padding: 12px 30px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    text-transform: uppercase;
+    transition: 0.3s;
+}
+
+/* Efectos al pasar el mouse */
+.btn-siguiente:hover {
+    background-color: #1ed760;
+    transform: scale(1.05);
+}
+
+.btn-volver:hover {
+    background-color: #535353;
+    border-color: #FFFFFF;
+}
 /* Pie de página */
 footer {
     padding: 40px;
